@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Suggestions UI - Vantasy</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration (Design System Tokens) -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "surface-container": "#20201c",
+                    "surface": "#141310",
+                    "inverse-primary": "#5f5e5e",
+                    "surface-container-high": "#2b2a26",
+                    "on-secondary-fixed": "#40000e",
+                    "on-primary-fixed": "#1b1b1b",
+                    "secondary-fixed": "#ffdadb",
+                    "on-secondary-fixed-variant": "#7c2a35",
+                    "secondary-container": "#7f2c37",
+                    "surface-container-low": "#1c1c18",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-fixed": "#ffdea7",
+                    "outline-variant": "#444748",
+                    "on-tertiary-fixed-variant": "#5c420c",
+                    "on-secondary-container": "#ff9da5",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "error": "#ffb4ab",
+                    "on-primary-container": "#848383",
+                    "on-tertiary": "#412d00",
+                    "surface-dim": "#141310",
+                    "tertiary-fixed-dim": "#e6c180",
+                    "on-primary": "#313030",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e6e2db",
+                    "secondary-fixed-dim": "#ffb2b7",
+                    "on-tertiary-container": "#9e7f44",
+                    "on-tertiary-fixed": "#271900",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface-variant": "#363530",
+                    "primary-container": "#1b1b1b",
+                    "surface-container-lowest": "#0f0e0b",
+                    "tertiary": "#e6c180",
+                    "surface-container-highest": "#363530",
+                    "primary": "#c8c6c5",
+                    "tertiary-container": "#261900",
+                    "surface-bright": "#3a3935",
+                    "on-error-container": "#ffdad6",
+                    "on-surface": "#e6e2db",
+                    "on-primary-fixed-variant": "#474746",
+                    "secondary": "#ffb2b7",
+                    "on-secondary": "#5f1320",
+                    "background": "#141310",
+                    "surface-tint": "#c8c6c5",
+                    "outline": "#8e9192",
+                    "on-background": "#e6e2db",
+                    "inverse-on-surface": "#31302c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "unit": "8px",
+                    "container-margin": "24px",
+                    "section-gap": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Sora"],
+                    "headline-lg": ["Playfair Display"],
+                    "body-lg": ["Sora"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "label-caps": ["Sora"],
+                    "price-display": ["Sora"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "price-display": ["20px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            -webkit-font-smoothing: antialiased;
+        }
+        .velvet-texture {
+            position: relative;
+        }
+        .velvet-texture::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: 0.03;
+            background-image: repeating-radial-gradient(circle at 0 0, transparent 0, theme('colors.background') 1px), repeating-linear-gradient(theme('colors.on-surface-variant'), theme('colors.on-surface-variant'));
+            pointer-events: none;
+            border-radius: inherit;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md selection:bg-tertiary selection:text-primary-container">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-background/95 dark:bg-background/95 backdrop-blur-md fixed top-0 w-full z-50 border-b border-tertiary/30 shadow-[0_4px_20px_rgba(230,193,128,0.05)]">
+<div class="flex justify-between items-center px-container-margin h-20 max-w-7xl mx-auto w-full">
+<div class="font-headline-lg text-headline-lg text-tertiary uppercase tracking-widest">
+                Vantasy
+            </div>
+<nav class="hidden md:flex gap-8 items-center font-headline-md text-headline-md tracking-wide text-tertiary">
+<a class="text-on-background/70 hover:text-tertiary-fixed-dim transition-all duration-300" href="#">The Van</a>
+<a class="text-tertiary border-b border-tertiary pb-1 opacity-80 scale-95 transition-all" href="#">Themes</a>
+<a class="text-on-background/70 hover:text-tertiary-fixed-dim transition-all duration-300" href="#">Experience</a>
+</nav>
+<button class="hidden md:block bg-transparent border border-tertiary text-tertiary font-label-caps px-6 py-2 rounded hover:bg-tertiary hover:text-primary-container transition-colors duration-300">
+                Book Now
+            </button>
+<!-- Mobile Menu Trigger -->
+<button class="md:hidden text-tertiary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-section-gap px-container-margin max-w-7xl mx-auto w-full flex flex-col gap-section-gap items-center justify-center">
+<div class="text-center mb-8 w-full">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-4">AI Suggestions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Showcasing proactive, context-aware notifications designed with understated elegance.</p>
+</div>
+<!-- 1. Home Banner -->
+<section class="w-full max-w-4xl flex flex-col gap-unit">
+<span class="font-label-caps text-label-caps text-on-surface-variant pl-2">Home Banner</span>
+<div class="velvet-texture bg-surface-container rounded-lg border border-tertiary/30 p-6 flex flex-col sm:flex-row items-center gap-6 justify-between shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
+<div class="flex items-center gap-4 flex-grow">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center border border-tertiary/20 flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                        Rainy evening ahead — a <span class="text-tertiary italic">Comfort Drive</span> with warm chai might be perfect.
+                    </p>
+</div>
+<a class="flex-shrink-0 font-label-caps text-label-caps text-tertiary hover:text-tertiary-fixed-dim transition-colors group flex items-center gap-2" href="#">
+                    VIEW THEME
+                    <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- 2. Push Notification -->
+<section class="w-full max-w-sm flex flex-col gap-unit mt-8">
+<span class="font-label-caps text-label-caps text-on-surface-variant pl-2">Push Notification</span>
+<div class="bg-primary-container rounded-xl p-5 shadow-[0_10px_40px_rgba(0,0,0,0.5)] border border-surface-container-high relative overflow-hidden">
+<!-- Subtle top glow -->
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-tertiary/40 to-transparent"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="local_cafe" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+<span class="font-label-caps text-[10px] tracking-widest text-on-surface/80 uppercase">Vantasy</span>
+</div>
+<span class="font-body-md text-[12px] text-on-surface-variant">Now</span>
+</div>
+<h3 class="font-headline-md text-[20px] leading-tight text-on-surface mb-2 font-bold">Your Mood, Refined</h3>
+<p class="font-body-md text-[14px] text-on-surface-variant leading-relaxed">
+                    The city lights are perfect for a Midnight Soiree tonight.
+                </p>
+</div>
+</section>
+<!-- 3. In-context Nudge -->
+<section class="w-full max-w-3xl flex flex-col gap-unit mt-8">
+<span class="font-label-caps text-label-caps text-on-surface-variant pl-2">In-context Nudge</span>
+<div class="bg-surface/60 backdrop-blur-sm border border-tertiary/50 rounded py-3 px-5 flex items-center justify-between shadow-[0_2px_10px_rgba(230,193,128,0.05)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[18px]" data-icon="auto_awesome" data-weight="fill" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<p class="font-body-md text-[14px] text-on-surface">
+<strong class="text-tertiary font-normal">Special event detected:</strong> Your anniversary is approaching. Explore <a class="underline decoration-tertiary/40 hover:decoration-tertiary underline-offset-4 transition-all" href="#">Romantic Date</a> themes.
+                    </p>
+</div>
+<button aria-label="Dismiss" class="text-on-surface-variant hover:text-tertiary transition-colors ml-4 flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-lowest w-full relative bottom-0 border-t border-tertiary/20 flex flex-col md:flex-row justify-between items-center px-container-margin py-section-gap mt-auto">
+<div class="font-headline-md text-headline-md text-tertiary mb-6 md:mb-0">
+            Vantasy
+        </div>
+<nav class="flex flex-wrap justify-center gap-6 font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all" href="#">Press Kit</a>
+<a class="text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all" href="#">Contact</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface-variant mt-6 md:mt-0 text-sm opacity-60">
+            © 2024 Vantasy Luxury Co. All rights reserved.
+        </div>
+</footer>
+</body></html>

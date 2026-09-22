@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CAFE ON WHEELS - Theme Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Sora:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#20201c",
+                      "surface-container-high": "#2b2a26",
+                      "on-primary-fixed": "#1b1b1b",
+                      "on-tertiary": "#412d00",
+                      "on-error": "#690005",
+                      "on-surface": "#e6e2db",
+                      "surface-bright": "#3a3935",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "surface": "#141310",
+                      "surface-container-highest": "#363530",
+                      "secondary-fixed-dim": "#ffb2b7",
+                      "surface-dim": "#141310",
+                      "on-secondary-fixed": "#40000e",
+                      "secondary-fixed": "#ffdadb",
+                      "primary": "#c8c6c5",
+                      "surface-tint": "#c8c6c5",
+                      "on-primary-fixed-variant": "#474746",
+                      "inverse-on-surface": "#31302c",
+                      "on-tertiary-fixed": "#271900",
+                      "inverse-surface": "#e6e2db",
+                      "outline-variant": "#444748",
+                      "tertiary-fixed": "#ffdea7",
+                      "primary-fixed": "#e5e2e1",
+                      "background": "#141310",
+                      "surface-container-lowest": "#0f0e0b",
+                      "on-secondary-fixed-variant": "#7c2a35",
+                      "tertiary": "#e6c180",
+                      "primary-container": "#1b1b1b",
+                      "secondary-container": "#7f2c37",
+                      "outline": "#8e9192",
+                      "on-tertiary-container": "#9e7f44",
+                      "on-primary": "#313030",
+                      "tertiary-container": "#261900",
+                      "surface-container-low": "#1c1c18",
+                      "on-primary-container": "#848383",
+                      "on-background": "#e6e2db",
+                      "secondary": "#ffb2b7",
+                      "on-secondary-container": "#ff9da5",
+                      "on-error-container": "#ffdad6",
+                      "error-container": "#93000a",
+                      "tertiary-fixed-dim": "#e6c180",
+                      "on-secondary": "#5f1320",
+                      "on-tertiary-fixed-variant": "#5c420c",
+                      "surface-variant": "#363530",
+                      "inverse-primary": "#5f5e5e",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#c4c7c7",
+                      // Custom brand colors added to config for utility
+                      "ivory-cream": "#F7F3EC",
+                      "velvet-charcoal": "#1B1B1B",
+                      "champagne-gold": "#C9A667"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "section-gap": "48px",
+                      "container-margin": "24px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "price-display": [
+                              "Sora"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "body-lg": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Sora"
+                      ],
+                      "label-caps": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "price-display": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 10 L90 90 M90 10 L10 90' stroke='rgba(201, 166, 103, 0.03)' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        
+        .gold-gradient-bg {
+            background: linear-gradient(45deg, #C9A667, #E6D2AA);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 20px 2px rgba(201, 166, 103, 0.15);
+        }
+        
+        .velvet-noise {
+            position: relative;
+        }
+        .velvet-noise::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        /* Hide scrollbar for clean aesthetic */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+
+        .theme-card-input:checked + div {
+            border-color: #C9A667;
+            box-shadow: inset 0 0 0 1px #C9A667, 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .theme-card-input:checked + div .check-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md antialiased pb-24 md:pb-0">
+<!-- TopAppBar (Transactional - Hidden or Simplified. As per guidelines, if linear flow, suppress shell, but we need a back button/header. We will use a simplified header) -->
+<header class="flex justify-between items-center px-container-margin h-16 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 sticky top-0">
+<button aria-label="Go back" class="text-tertiary dark:text-tertiary hover:text-tertiary-fixed transition-colors flex items-center justify-center p-2 -ml-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md tracking-widest text-tertiary dark:text-tertiary-fixed-dim uppercase text-center flex-1">
+            CAFE ON WHEELS
+        </div>
+<div class="w-10"></div> <!-- Spacer for balance -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 flex flex-col items-center px-container-margin pt-section-gap max-w-4xl mx-auto w-full">
+<!-- Header -->
+<div class="text-center mb-12 w-full">
+<p class="font-label-caps text-label-caps text-tertiary mb-2">STEP 2 OF 4</p>
+<h1 class="font-display-lg text-display-lg text-on-surface">CHOOSE YOUR THEME</h1>
+<div class="flex items-center justify-center mt-6">
+<div class="h-px bg-gradient-to-r from-transparent via-tertiary to-transparent w-32 opacity-30"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary mx-2"></div>
+<div class="h-px bg-gradient-to-r from-transparent via-tertiary to-transparent w-32 opacity-30"></div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-lg mx-auto">Select the perfect atmosphere for your journey. Each theme is meticulously curated to elevate your experience.</p>
+</div>
+<!-- Theme Selection Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-section-gap">
+<!-- Theme 1: The Comfort Haven -->
+<label class="relative cursor-pointer group col-span-1 md:col-span-2">
+<input checked="" class="theme-card-input sr-only" name="theme_selection" type="radio" value="comfort_haven"/>
+<div class="bg-ivory-cream rounded-xl border border-champagne-gold/30 p-6 md:p-8 flex flex-col md:flex-row items-center gap-8 transition-all duration-300 hover:border-champagne-gold/60 h-full relative overflow-hidden">
+<!-- Decorative subtle gradient overlay -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-champagne-gold/10 to-transparent rounded-bl-full pointer-events-none"></div>
+<!-- Selected State Checkmark -->
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-champagne-gold flex items-center justify-center check-icon opacity-0 scale-50 transition-all duration-300 z-10 shadow-md">
+<span class="material-symbols-outlined text-velvet-charcoal" style="font-variation-settings: 'FILL' 1, 'wght' 600; font-size: 18px;">check</span>
+</div>
+<div class="w-full md:w-2/5 aspect-[4/3] rounded-lg overflow-hidden border border-velvet-charcoal/10 relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A macro, beautifully lit photograph of a miniature, handcrafted couple figurine sitting peacefully. The figurines are styled with smooth, high-quality clay or resin textures, painted in warm, earthy tones. They are set against a soft, blurred background featuring warm, ambient golden-hour lighting. The overall mood is intimate, cozy, and luxurious, fitting a high-end, bespoke romantic experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7xIw8b-Y_X1b2hDhQBba6P33XyGkBJpzzRMDEMPE_D_kTMrF7lMmmvYlJnTbstRYQNQG1Z7aKO0wGAnEeJvpGvpXHtjACj0CM0SOHb8ila61zZtFfj5jLRJFf3vMx-uk-7mWCH6ySdHkH5o_spNx8A0czc7e2WBIEggvpNk4KOOqPUc4W2HDwrIgTVnpuCYCs89hfEsBkhpMn2Hz4YKq29hPOHM0hT44RA3729y_L6ZWVuKwMnLU"/>
+</div>
+<div class="flex-1 flex flex-col justify-center text-velvet-charcoal w-full">
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="inline-block px-3 py-1 bg-champagne-gold/20 text-[#8B6E3C] font-label-caps text-[10px] rounded-full mb-3 tracking-widest font-bold">MOST POPULAR</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-velvet-charcoal">The Comfort Haven</h3>
+</div>
+</div>
+<p class="font-body-md text-velvet-charcoal/70 mb-6 leading-relaxed">An intimate, warmly lit environment designed for deep conversations and relaxation. Featuring plush seating and subtle aromatic touches.</p>
+<div class="mt-auto flex items-end justify-between border-t border-velvet-charcoal/10 pt-4">
+<div>
+<p class="text-xs font-label-caps tracking-widest text-velvet-charcoal/50 mb-1">PRICE</p>
+<p class="font-price-display text-price-display text-velvet-charcoal">₹6,999</p>
+</div>
+<ul class="text-sm text-velvet-charcoal/60 space-y-1 text-right">
+<li class="flex items-center justify-end gap-2"><span class="material-symbols-outlined text-champagne-gold" style="font-size: 16px;">local_cafe</span> Premium Beverages</li>
+<li class="flex items-center justify-end gap-2"><span class="material-symbols-outlined text-champagne-gold" style="font-size: 16px;">music_note</span> Curated Playlist</li>
+</ul>
+</div>
+</div>
+</div>
+</label>
+<!-- Theme 2: Celebration Suite -->
+<label class="relative cursor-pointer group">
+<input class="theme-card-input sr-only" name="theme_selection" type="radio" value="celebration_suite"/>
+<div class="bg-ivory-cream rounded-xl border border-champagne-gold/30 p-6 flex flex-col transition-all duration-300 hover:border-champagne-gold/60 h-full relative overflow-hidden">
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-champagne-gold flex items-center justify-center check-icon opacity-0 scale-50 transition-all duration-300 z-10 shadow-md">
+<span class="material-symbols-outlined text-velvet-charcoal" style="font-variation-settings: 'FILL' 1, 'wght' 600; font-size: 18px;">check</span>
+</div>
+<div class="w-full aspect-video rounded-lg overflow-hidden border border-velvet-charcoal/10 relative shadow-inner mb-6">
+<img class="w-full h-full object-cover" data-alt="A vibrant yet sophisticated miniature diorama featuring a small group of finely detailed figurines celebrating. Miniature elegant balloons and subtle confetti elements are present. The lighting is festive but refined, using warm spotlights against a slightly moody, dark velvet backdrop. The aesthetic screams high-end exclusive party, capturing a sense of joy within a luxurious setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPzZHbnvMCWh_qM5KOh7RO1IR9CAPlun76LzSFEi4OpsrJlXrjNxjprTn41qOGRw46_6gIMMzh96fqADX0nPiwZ5QmKKnBIT6dYFd2sv9aLIwfTK0Sc38ob7O8ySdk6BKEs-BEocc-FuTtAC-GIfCggstCExq6QMyiDZQesoPx3vc-EbgEmNaV338MW8UxqN6vsba6OdBwRm_sFwfGKvud3KdYo0Z5EhjbIfc5fxgQUs4qtiHz7mY"/>
+</div>
+<div class="flex-1 flex flex-col text-velvet-charcoal">
+<h3 class="font-headline-md text-headline-md text-velvet-charcoal mb-2">Celebration Suite</h3>
+<p class="font-body-md text-sm text-velvet-charcoal/70 mb-6">Joyful, vibrant, and ready for your special occasion. Includes decorative accents and celebratory ambiance.</p>
+<div class="mt-auto flex items-end justify-between border-t border-velvet-charcoal/10 pt-4">
+<div>
+<p class="font-price-display text-price-display text-velvet-charcoal">₹8,499</p>
+</div>
+</div>
+</div>
+</div>
+</label>
+<!-- Theme 3: Executive Studio -->
+<label class="relative cursor-pointer group">
+<input class="theme-card-input sr-only" name="theme_selection" type="radio" value="executive_studio"/>
+<div class="bg-ivory-cream rounded-xl border border-champagne-gold/30 p-6 flex flex-col transition-all duration-300 hover:border-champagne-gold/60 h-full relative overflow-hidden">
+<div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-champagne-gold flex items-center justify-center check-icon opacity-0 scale-50 transition-all duration-300 z-10 shadow-md">
+<span class="material-symbols-outlined text-velvet-charcoal" style="font-variation-settings: 'FILL' 1, 'wght' 600; font-size: 18px;">check</span>
+</div>
+<div class="w-full aspect-video rounded-lg overflow-hidden border border-velvet-charcoal/10 relative shadow-inner mb-6">
+<img class="w-full h-full object-cover" data-alt="A sleek, modern, and moody interior shot of a luxurious mobile office space. Dark wood panels, charcoal leather seating, and sophisticated, focused architectural lighting. The environment feels extremely premium, private, and quiet, designed for high-level focus or exclusive executive meetings. Minimalist and refined." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR3iDlq5931YICd8OFICdqpZY1JWhYveL1oO0y8us9rHz7355Z9Y7u5vAdRFAgxIHQlUnhsvbgk93Pma7qRJNSkLdT-2-Dq9MaHixanqmpeXoBn0RSvdZr82nL70oTqgLFVJELLeFrpO_nL0lAMVxKDj6HdcDKwEuAJYL1a5LD9ngGOdRYsko0OU1ODGoXHKeuw3WOIBbLmt2114Y07aYPHZwMwIIp6qVH_Fov0B-bJMgeLkVBSDk"/>
+</div>
+<div class="flex-1 flex flex-col text-velvet-charcoal">
+<h3 class="font-headline-md text-headline-md text-velvet-charcoal mb-2">Executive Studio</h3>
+<p class="font-body-md text-sm text-velvet-charcoal/70 mb-6">Sleek, focused, and quiet. Features sophisticated lighting and privacy enhancements for uninterrupted focus.</p>
+<div class="mt-auto flex items-end justify-between border-t border-velvet-charcoal/10 pt-4">
+<div>
+<p class="font-price-display text-price-display text-velvet-charcoal">₹10,999</p>
+</div>
+</div>
+</div>
+</div>
+</label>
+</div>
+</main>
+<!-- Bottom Action Bar (Contextual to the flow, not the main nav) -->
+<div class="fixed bottom-0 left-0 w-full z-50 p-container-margin bg-surface-container-lowest/95 backdrop-blur-xl border-t border-outline-variant/20 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+<div class="text-on-surface text-center sm:text-left hidden sm:block">
+<p class="text-sm text-on-surface-variant font-body-md">Selected Theme</p>
+<p class="font-headline-md text-lg text-tertiary">The Comfort Haven</p>
+</div>
+<button class="w-full sm:w-auto px-8 py-4 gold-gradient-bg text-velvet-charcoal font-label-caps text-label-caps tracking-widest rounded-lg flex items-center justify-center gap-2 gold-glow hover:brightness-110 transition-all active:scale-95 shadow-lg">
+                SELECT DESTINATION
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

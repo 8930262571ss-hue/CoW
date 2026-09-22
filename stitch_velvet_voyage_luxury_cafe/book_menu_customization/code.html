@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu &amp; Add-ons - Vélo d'Or Luxe Cafe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Sora:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "on-secondary-fixed": "#40000e",
+                      "secondary-fixed-dim": "#ffb2b7",
+                      "tertiary-container": "#261900",
+                      "outline-variant": "#444748",
+                      "surface-container-lowest": "#0f0e0b",
+                      "inverse-on-surface": "#31302c",
+                      "inverse-surface": "#e6e2db",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "background": "#141310",
+                      "on-tertiary-fixed-variant": "#5c420c",
+                      "surface-container-high": "#2b2a26",
+                      "primary": "#c8c6c5",
+                      "on-secondary-fixed-variant": "#7c2a35",
+                      "on-error-container": "#ffdad6",
+                      "inverse-primary": "#5f5e5e",
+                      "on-secondary-container": "#ff9da5",
+                      "secondary-fixed": "#ffdadb",
+                      "secondary": "#ffb2b7",
+                      "outline": "#8e9192",
+                      "on-tertiary-fixed": "#271900",
+                      "surface": "#141310",
+                      "surface-dim": "#141310",
+                      "on-primary-container": "#848383",
+                      "tertiary": "#e6c180",
+                      "error": "#ffb4ab",
+                      "on-background": "#e6e2db",
+                      "on-primary-fixed-variant": "#474746",
+                      "surface-container-low": "#1c1c18",
+                      "tertiary-fixed-dim": "#e6c180",
+                      "surface-variant": "#363530",
+                      "on-primary-fixed": "#1b1b1b",
+                      "tertiary-fixed": "#ffdea7",
+                      "surface-container-highest": "#363530",
+                      "on-tertiary": "#412d00",
+                      "secondary-container": "#7f2c37",
+                      "on-primary": "#313030",
+                      "on-surface": "#e6e2db",
+                      "on-secondary": "#5f1320",
+                      "on-error": "#690005",
+                      "primary-fixed": "#e5e2e1",
+                      "surface-container": "#20201c",
+                      "surface-tint": "#c8c6c5",
+                      "surface-bright": "#3a3935",
+                      "on-tertiary-container": "#9e7f44",
+                      "on-surface-variant": "#c4c7c7",
+                      "primary-container": "#1b1b1b"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "section-gap": "48px",
+                      "unit": "8px",
+                      "container-margin": "24px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ],
+                      "price-display": [
+                              "Sora"
+                      ],
+                      "label-caps": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Sora"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "price-display": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #141310;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        
+        .gold-gradient {
+            background: linear-gradient(45deg, #c9a667, #e6d2aa);
+        }
+        
+        .gold-border-thin {
+            border: 1px solid rgba(201, 166, 103, 0.3);
+        }
+        
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(201, 166, 103, 0.15);
+        }
+        
+        /* Custom Checkbox */
+        input[type="checkbox"].gold-check:checked {
+            background-color: #c9a667;
+            border-color: #c9a667;
+        }
+        
+        /* Custom Range Slider */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #e6c180;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #363530;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface font-headline-md text-headline-md fixed top-0 w-full z-50 border-b border-tertiary/30 flat no shadows">
+<div class="flex justify-between items-center px-container-margin py-unit h-20 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md text-tertiary tracking-widest">VÉLO D'OR</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<!-- Stepper in Header for Web -->
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">Destination</span>
+</div>
+<div class="w-8 h-px bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-caps text-label-caps">Theme</span>
+</div>
+<div class="w-8 h-px bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 text-tertiary font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="font-label-caps text-label-caps">Menu &amp; Add-ons</span>
+</div>
+<div class="w-8 h-px bg-outline-variant/30"></div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">circle</span>
+<span class="font-label-caps text-label-caps">Vehicle &amp; Time</span>
+</div>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-tertiary dark:text-tertiary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+<button class="text-tertiary dark:text-tertiary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-28 pb-32 px-container-margin max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-section-gap">
+<!-- Left Content Area -->
+<div class="flex-1 flex flex-col gap-section-gap">
+<!-- Refine Your Theme Section -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Refine Your Theme</h2>
+<div class="flex-grow h-px bg-tertiary/30"></div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-6 gold-border-thin relative overflow-hidden group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500" data-alt="A luxurious midnight cafe setting. Deep velvet curtains in rich charcoal grey surround a small, elegant round table set with fine china and polished gold cutlery. A single, soft amber spotlight illuminates a crystal champagne flute. The aesthetic is intimate, modern luxury, and cinematic, emphasizing deep shadows and warm, glowing highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPMCADEDziY_sNwKmWpuACjqCTactSYG8VkF_4AqVs5L9Y76WUQRTS5GY3X-KzzpZ-gKQrL9Qib1uXRABO6SyFsowYZMR9W95MAcN9wYq-8Wx97ud-kJJSUa9_tPMK93hu4nyNDfuebq4_AvlzI_vSZRNpvLnACtMhSKifMrDKZacgdf1ihPxNwLUNmBlAIYQ0jA6MMtdCyzcts-_2k5quH7KmM7StYk-IiQ7waCA810qIrjNqYnQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/80 to-transparent"></div>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-tertiary tracking-widest">SELECTED THEME</span>
+<h3 class="font-display-lg text-display-lg text-on-surface">Midnight Soiree</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">An intimate, low-light ambiance crafted for deep conversations and quiet luxury. Features velvet upholstery and amber accent lighting.</p>
+</div>
+<div class="flex flex-col gap-6 min-w-[250px]">
+<div class="flex items-center justify-between p-4 bg-surface-container rounded-lg border border-outline-variant/30">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Mini Theatre</span>
+<span class="font-price-display text-price-display text-tertiary text-sm">+₹1,499</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">LIGHTING AMBIANCE</span>
+<span class="material-symbols-outlined text-tertiary text-sm">lightbulb</span>
+</div>
+<input class="w-full" max="100" min="1" type="range" value="30"/>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">MUSIC VOLUME</span>
+<span class="material-symbols-outlined text-tertiary text-sm">music_note</span>
+</div>
+<input class="w-full" max="100" min="1" type="range" value="60"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Artisan Menu Section -->
+<section class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Artisan Menu</h2>
+<div class="flex-grow h-px bg-tertiary/30"></div>
+</div>
+<!-- Tabs -->
+<div class="flex overflow-x-auto hide-scrollbar gap-8 border-b border-outline-variant/30 pb-2">
+<button class="font-label-caps text-label-caps text-tertiary border-b-2 border-tertiary pb-2 whitespace-nowrap">SIGNATURE COFFEE</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors pb-2 whitespace-nowrap">PATISSERIE</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors pb-2 whitespace-nowrap">BREAKFAST</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors pb-2 whitespace-nowrap">FULL MEALS</button>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+<!-- Item Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/20 hover:border-tertiary/50 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic, high-end food photograph of a steaming cup of Saffron Latte. The creamy, golden-hued beverage is served in an exquisite dark ceramic cup, garnished with delicate strands of red saffron on top. The background is a moody, blurred dark velvet setting, lit by a warm, directional spotlight that catches the steam rising from the cup, conveying modern luxury and warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwL0s8bkTbJrHaWxl6tkwj8PHLzuidHPBdLpfDd12fWxAkO5V1tApyM_eZV-_W2r3yW2A5d6qlY8v1LJPkx96sR88oRKbfnUdhcVY4TH3YvgC73j9_SMy_keI8HN_26-auQvmN0PTrtzer-W2owCbq_h3mQ0uf-jUIGrD07QBF43bOUwSdc25GypF6fb6KOo4TqgXGCiDSE1144verttYIvFq_p-eD4LEqrHVpKSH1ayxYpcadIag"/>
+<div class="absolute top-3 left-3 bg-surface/80 backdrop-blur-sm px-2 py-1 rounded flex items-center justify-center border border-tertiary/30">
+<span class="w-3 h-3 border border-green-600 flex items-center justify-center"><span class="w-1.5 h-1.5 bg-green-600 rounded-full"></span></span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Saffron Latte</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Infused with premium Iranian saffron and a touch of wild honey.</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-price-display text-price-display text-tertiary">₹399</span>
+<!-- Stepper -->
+<div class="flex items-center gap-3 bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant/30">
+<button class="text-on-surface-variant hover:text-tertiary"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-body-md text-body-md font-semibold text-on-surface w-4 text-center">1</span>
+<button class="text-on-surface-variant hover:text-tertiary"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/20 hover:border-tertiary/50 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A close-up, premium culinary shot of Pistachio Baklava on a dark, slate serving plate. The golden, flaky pastry layers are perfectly crisp, generously filled with vibrant green pistachios, and glistening with a light syrup glaze. The lighting is dramatic and moody, highlighting the textures of the pastry against a rich, dark background, embodying high-end indulgence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyMpghh2Mj51f-YCIb0Bhhx7qYPZws1M_EyXGR10wLgRGrsYymPG4Vh0aqs4BQoOiOjegGYGv0HEBCkWSs75Gklk6tirxnh8KC6DH4sTAaVFCnERDwEuC4IlKr3ila4s0Llz14jo9Qpelz-jcRUxNHLvl8bvwNSPbetBGMRwCLP01GjyqipAr9Ib5-E_uAL59eIeIMLJyvpuh_mwiQzjHNLVEMkislPEzfm-9GzCsG3fFOMCZkgnU"/>
+<div class="absolute top-3 left-3 bg-surface/80 backdrop-blur-sm px-2 py-1 rounded flex items-center justify-center border border-tertiary/30">
+<span class="w-3 h-3 border border-green-600 flex items-center justify-center"><span class="w-1.5 h-1.5 bg-green-600 rounded-full"></span></span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Pistachio Baklava</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Layers of crisp phyllo, crushed pistachios, and delicate rose-water syrup.</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-price-display text-price-display text-tertiary">₹549</span>
+<!-- Stepper -->
+<div class="flex items-center gap-3 bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant/30">
+<button class="text-on-surface-variant hover:text-tertiary"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-body-md text-body-md font-semibold text-on-surface w-4 text-center">2</span>
+<button class="text-on-surface-variant hover:text-tertiary"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Item Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/20 hover:border-tertiary/50 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A top-down view of Truffle Scrambled Eggs elegantly plated on a matte black ceramic dish. The eggs are soft, creamy, and garnished with thin shavings of black truffle and fresh microgreens. A sliver of toasted artisanal sourdough rests beside it. The dark, luxurious aesthetic is maintained with soft, directional lighting that emphasizes the rich textures and premium ingredients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUWb7CNpE_jYDsJ-pQwONXIwh_k8zctOdFn3R4Cvu2MkDWHNMWWYJeGb66QyrDPzw1PGtJImOyikI3AxWosfMLcxlW3NKvYDC4D7y2Qau_f0f1Ru-lDqOIMGp7HjKAv_lp0-7ShktHcTWA8TEhnYf0qeFvj0l8T5RYVeAnW8Bp_nU9FImXHDceMRHKMetJ4qUTl7bt-VjA_YqpsNHXKGJO0KP0jgfXYNwX6DIQCGNQcPG7khq52XU"/>
+<div class="absolute top-3 left-3 bg-surface/80 backdrop-blur-sm px-2 py-1 rounded flex items-center justify-center border border-tertiary/30">
+<span class="w-3 h-3 border border-red-600 flex items-center justify-center"><span class="w-1.5 h-1.5 bg-red-600 rounded-full"></span></span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-grow justify-between gap-4">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface mb-1">Truffle Scrambled Eggs</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm line-clamp-2">Soft scrambled eggs with black truffle shavings on artisanal sourdough.</p>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<span class="font-price-display text-price-display text-tertiary">₹899</span>
+<!-- Add Button -->
+<button class="bg-transparent border border-tertiary/50 text-tertiary font-label-caps text-label-caps px-4 py-2 rounded-full hover:bg-tertiary/10 transition-colors">
+                                    ADD
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Personalized Touches -->
+<section class="flex flex-col gap-6 mt-8">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Personalized Touches</h2>
+<div class="flex-grow h-px bg-tertiary/30"></div>
+</div>
+<div class="relative group">
+<textarea class="w-full bg-[#121212] border-0 border-b border-outline-variant/50 text-on-surface focus:ring-0 focus:border-tertiary transition-colors resize-none p-4 rounded-t-lg font-body-md text-body-md placeholder:text-on-surface-variant/50" placeholder="Special requests, allergies, or celebration notes..." rows="3"></textarea>
+</div>
+</section>
+</div>
+<!-- Right Sidebar (Order Summary) -->
+<aside class="w-full lg:w-96 flex-shrink-0">
+<div class="sticky top-28 bg-surface-container-lowest rounded-xl border border-tertiary/30 p-6 flex flex-col gap-6 shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
+<h3 class="font-headline-md text-headline-md text-on-surface text-center pb-4 border-b border-tertiary/20">Order Summary</h3>
+<div class="flex flex-col gap-4 font-body-md text-body-md">
+<!-- Theme -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">Midnight Soiree</span>
+<span class="text-on-surface-variant text-sm">Theme Base</span>
+</div>
+<span class="text-on-surface">₹12,999</span>
+</div>
+<!-- Add-ons -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="text-on-surface font-semibold">Mini Theatre</span>
+<span class="text-on-surface-variant text-sm">Add-on</span>
+</div>
+<span class="text-tertiary">+₹1,499</span>
+</div>
+<div class="w-full h-px bg-outline-variant/20 my-2"></div>
+<!-- Items -->
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant">1x Saffron Latte</span>
+<span class="text-on-surface">₹399</span>
+</div>
+<div class="flex justify-between items-start">
+<span class="text-on-surface-variant">2x Pistachio Baklava</span>
+<span class="text-on-surface">₹1,098</span>
+</div>
+<div class="w-full h-px bg-outline-variant/20 my-2"></div>
+<!-- Delivery/Distance -->
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<span class="text-on-surface">Est. Distance Charge</span>
+<span class="text-on-surface-variant text-xs">Based on destination</span>
+</div>
+<span class="text-on-surface">₹800</span>
+</div>
+</div>
+<div class="w-full h-px bg-tertiary/50 mt-2 mb-2 relative flex justify-center">
+<div class="w-2 h-2 rotate-45 border border-tertiary bg-surface-container-lowest absolute -top-1"></div>
+</div>
+<!-- Total -->
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps text-on-surface-variant">EST. TOTAL</span>
+<span class="font-display-lg text-display-lg text-tertiary">₹16,246</span>
+</div>
+<!-- CTA -->
+<button class="w-full gold-gradient text-on-primary-fixed font-label-caps text-label-caps py-4 rounded-lg mt-4 hover:brightness-110 transition-all gold-glow flex justify-center items-center gap-2">
+                    PROCEED TO CHECKOUT
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<p class="text-center font-body-md text-xs text-on-surface-variant/50 mt-2">Taxes calculated at checkout.</p>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-high dark:bg-surface-container-high fixed bottom-0 w-full z-50 rounded-t-xl border-t border-tertiary/30 shadow-lg">
+<div class="flex justify-between items-center px-container-margin py-4 w-full">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Total</span>
+<span class="font-price-display text-price-display text-tertiary">₹16,246</span>
+</div>
+<button class="bg-tertiary text-on-tertiary px-8 py-3 rounded-full flex items-center gap-2 font-body-lg text-body-lg hover:brightness-110 shadow-[0_0_20px_rgba(230,193,128,0.15)] Active: scale-98 transition-all">
+                Continue
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest w-full py-8 border-t border-outline-variant/20 flat no shadows hidden md:flex">
+<div class="flex flex-col items-center justify-center gap-4 px-container-margin max-w-7xl mx-auto w-full">
+<span class="font-label-caps text-label-caps text-tertiary">VÉLO D'OR</span>
+<div class="flex gap-6 font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant">
+<a class="hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-tertiary transition-colors" href="#">Contact Support</a>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant/50 mt-4">© 2024 VÉLO D'OR LUXE CAFE. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

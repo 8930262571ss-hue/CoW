@@ -1,0 +1,404 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Explore Themes - Vantasy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Sora:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed-variant": "#474746",
+                      "primary": "#c8c6c5",
+                      "secondary-fixed": "#ffdadb",
+                      "on-tertiary-container": "#9e7f44",
+                      "primary-container": "#1b1b1b",
+                      "surface-container-lowest": "#0f0e0b",
+                      "on-error-container": "#ffdad6",
+                      "surface-container-high": "#2b2a26",
+                      "secondary-fixed-dim": "#ffb2b7",
+                      "on-background": "#e6e2db",
+                      "on-primary-fixed": "#1b1b1b",
+                      "tertiary": "#e6c180",
+                      "surface-container-low": "#1c1c18",
+                      "surface-dim": "#141310",
+                      "surface-variant": "#363530",
+                      "on-tertiary-fixed": "#271900",
+                      "outline": "#8e9192",
+                      "on-secondary": "#5f1320",
+                      "on-surface-variant": "#c4c7c7",
+                      "secondary": "#ffb2b7",
+                      "surface-container": "#20201c",
+                      "surface-container-highest": "#363530",
+                      "error": "#ffb4ab",
+                      "surface": "#141310",
+                      "on-secondary-fixed-variant": "#7c2a35",
+                      "surface-tint": "#c8c6c5",
+                      "secondary-container": "#7f2c37",
+                      "on-secondary-fixed": "#40000e",
+                      "on-error": "#690005",
+                      "primary-fixed": "#e5e2e1",
+                      "on-tertiary-fixed-variant": "#5c420c",
+                      "surface-bright": "#3a3935",
+                      "outline-variant": "#444748",
+                      "inverse-on-surface": "#31302c",
+                      "tertiary-fixed-dim": "#e6c180",
+                      "tertiary-container": "#261900",
+                      "primary-fixed-dim": "#c8c6c5",
+                      "on-primary-container": "#848383",
+                      "inverse-surface": "#e6e2db",
+                      "error-container": "#93000a",
+                      "background": "#141310",
+                      "on-tertiary": "#412d00",
+                      "on-primary": "#313030",
+                      "on-secondary-container": "#ff9da5",
+                      "on-surface": "#e6e2db",
+                      "tertiary-fixed": "#ffdea7",
+                      "inverse-primary": "#5f5e5e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-margin": "24px",
+                      "gutter": "16px",
+                      "section-gap": "48px",
+                      "unit": "8px"
+              },
+              "fontFamily": {
+                      "price-display": [
+                              "Sora"
+                      ],
+                      "label-caps": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Sora"
+                      ],
+                      "headline-lg": [
+                              "Playfair Display"
+                      ],
+                      "headline-md": [
+                              "Playfair Display"
+                      ],
+                      "display-lg": [
+                              "Playfair Display"
+                      ],
+                      "body-md": [
+                              "Sora"
+                      ],
+                      "headline-lg-mobile": [
+                              "Playfair Display"
+                      ]
+              },
+              "fontSize": {
+                      "price-display": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.15em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .gold-gradient {
+            background: linear-gradient(45deg, #C9A667, #E6D2AA);
+        }
+        .gold-border {
+            border-color: rgba(201, 166, 103, 0.3);
+        }
+        .gold-border:focus-within, .gold-border:hover {
+            border-color: rgba(201, 166, 103, 1);
+        }
+        .velvet-texture {
+            position: relative;
+        }
+        .velvet-texture::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E');
+            pointer-events: none;
+        }
+        .soft-glow {
+            box-shadow: 0 0 20px rgba(201, 166, 103, 0.15);
+        }
+      </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/95 dark:bg-background/95 backdrop-blur-md border-b border-tertiary/30 shadow-[0_4px_20px_rgba(230,193,128,0.05)]">
+<div class="flex justify-between items-center px-container-margin h-20 max-w-7xl mx-auto w-full">
+<a class="font-headline-lg text-headline-lg text-tertiary uppercase tracking-widest" href="#">Vantasy</a>
+<nav class="hidden md:flex gap-8">
+<a class="font-headline-md text-headline-md tracking-wide text-on-background/70 hover:text-tertiary-fixed-dim transition-all duration-300" href="#">The Van</a>
+<a class="font-headline-md text-headline-md tracking-wide text-tertiary border-b border-tertiary pb-1 opacity-80 scale-95 transition-all" href="#">Themes</a>
+<a class="font-headline-md text-headline-md tracking-wide text-on-background/70 hover:text-tertiary-fixed-dim transition-all duration-300" href="#">Experience</a>
+</nav>
+<button class="gold-gradient text-on-primary-fixed font-body-md text-body-md font-bold px-6 py-2 rounded-full soft-glow hover:opacity-90 transition-opacity">
+                Book Now
+            </button>
+</div>
+</header>
+<main class="flex-grow max-w-7xl mx-auto w-full px-container-margin py-section-gap space-y-section-gap">
+<!-- Hero/Search Section -->
+<section class="velvet-texture bg-surface-container-low rounded-xl p-8 border border-tertiary/20">
+<div class="text-center mb-8">
+<h1 class="font-display-lg text-display-lg text-tertiary mb-4">Curate Your Journey</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Select a mood to transform your mobile lounge. Every theme is meticulously crafted for an unforgettable experience.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Theme Mood -->
+<div class="relative gold-border border rounded-lg p-2 bg-surface">
+<label class="block font-label-caps text-label-caps text-tertiary mb-1 px-2">Theme Mood</label>
+<select class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-body-md text-body-md appearance-none cursor-pointer">
+<option value="all">All Moods</option>
+<option value="romantic">Romantic</option>
+<option value="celebration">Celebration</option>
+<option value="comfort">Comfort/Relax</option>
+<option value="social">Social</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none">expand_more</span>
+</div>
+<!-- Guest Count -->
+<div class="relative gold-border border rounded-lg p-2 bg-surface">
+<label class="block font-label-caps text-label-caps text-tertiary mb-1 px-2">Guest Count</label>
+<select class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-body-md text-body-md appearance-none cursor-pointer">
+<option value="1">1-2 Guests</option>
+<option value="3">3-4 Guests</option>
+<option value="5">5-7 Guests</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none">expand_more</span>
+</div>
+<!-- Price Range -->
+<div class="relative gold-border border rounded-lg p-2 bg-surface">
+<label class="block font-label-caps text-label-caps text-tertiary mb-1 px-2">Price Range</label>
+<select class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-body-md text-body-md appearance-none cursor-pointer">
+<option value="all">Any Price</option>
+<option value="low">₹4,999 - ₹8,999</option>
+<option value="mid">₹9,000 - ₹12,999</option>
+<option value="high">₹13,000 - ₹15,999</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none">expand_more</span>
+</div>
+<!-- Add-ons -->
+<div class="relative gold-border border rounded-lg p-2 bg-surface">
+<label class="block font-label-caps text-label-caps text-tertiary mb-1 px-2">Add-ons</label>
+<select class="w-full bg-transparent border-none text-on-surface focus:ring-0 font-body-md text-body-md appearance-none cursor-pointer">
+<option value="none">None</option>
+<option value="theatre">Mini Theatre</option>
+<option value="decor">Custom Decor</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-tertiary pointer-events-none">expand_more</span>
+</div>
+</div>
+</section>
+<!-- Theme Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1: Midnight Soiree -->
+<div class="group flex flex-col bg-surface-container-high rounded-xl overflow-hidden border border-tertiary/10 hover:border-tertiary/40 transition-colors duration-500">
+<div class="relative h-64 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A luxurious van interior at night, romantic intimate lighting, deep wine velvet seats, subtle gold accents, cinematic dusk mood, high fidelity render." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMF2rnKlkIIg0R2jBNU98ro3OKP8hGQ8RZr3CpZ7o7mFFf8mG8gTs5tUZgaKFN8zaL5p1YDWMdMXfOkF_3_TinEXyHfiagkRvzRlq8mZBdQkCTF7uAiYmTK2TkHw2POpplQ01E5FfWwTiwcuFOmqb9xFWC_Um6omuy3VQMQB8z6TyKG2p12Ml4sGv9GnsVmVSsWHXXjk7fv7-a-cp50tDkiEdh0TYHirOaVdl9Wo_hU8IAr_89jLI')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<span class="absolute top-4 left-4 bg-tertiary-container text-tertiary font-label-caps text-label-caps px-3 py-1 rounded-full uppercase tracking-widest">Signature</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between velvet-texture bg-surface-container-high relative">
+<img alt="" class="absolute -top-12 right-4 w-16 h-16 object-contain z-10 drop-shadow-lg" data-alt="Small 3D miniature character figurine, cute style, sitting with a coffee cup, warm lighting." src="https://lh3.googleusercontent.com/aida/AP1WRLuVqBEdUrQ7SY-E1BL-6bQTe105USq5Lasmrlt8FEX2k8lPIGJWnbXX5_BY9HyAkQLuvkG19cP4KdxqigF-VSOA0UoVHLj5qu_dSUZl28JElRAjZbllirlgaNftCBb1mOITMHH4RDxR_7SM6q2tZob9AnN8OiMz2qZNavCDdhJvDGhStrCvXG8-Zvt4pM9t3H8ZylpzsXD_QAK66uQaibOGuDecfv_usGjhN4LqGLR2s5z5x9RNGW4Gdg">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-tertiary mb-2">Midnight Soiree</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Romantic, intimate lighting, deep wine accents.</p>
+</div>
+<div>
+<p class="font-price-display text-price-display text-tertiary mb-4">From ₹3500&nbsp;<span class="font-body-md text-body-md text-on-surface-variant font-normal">/ ride</span></p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-tertiary/30 flex items-center justify-center text-tertiary hover:bg-tertiary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">360</span>
+</button>
+<button class="flex-grow gold-gradient text-on-primary-fixed font-body-md text-body-md font-bold rounded-full soft-glow hover:opacity-90 transition-opacity">
+                                Select Theme
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: The Comfort Haven -->
+<div class="group flex flex-col bg-surface-container-high rounded-xl overflow-hidden border border-tertiary/10 hover:border-tertiary/40 transition-colors duration-500">
+<div class="relative h-64 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A cozy van interior, soft warm ivory lighting, plush cream velvet cushions, light wood textures, relaxing comfort mood, high fidelity render." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-zYa9bq3B1XVqDqQJF25DDn53EgQlkitozpKs3jNU0hxVpkgvr-fJv6Jmr-BrXLrgirpbQmy5b712lOhSnbleEHqAbMe8BFwTX7Cisiv-ChKaCo7pBi5Tq-au2M8vom-bGRgD7SLrQnyOa4lf2_mRYQELbLb0BdpyfxAabKIXjorNwIAn3KnosbY6Gn5sWpssGw7uird4dJSfwdFzAt0JCneiJa1ClQ_zVNcjlyG9FocmcYxqGi0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between velvet-texture bg-surface-container-high relative">
+<img alt="" class="absolute -top-12 right-4 w-16 h-16 object-contain z-10 drop-shadow-lg" data-alt="Small 3D miniature character figurine, cute style, wrapped in a blanket, peaceful expression, warm lighting." src="https://lh3.googleusercontent.com/aida/AP1WRLuVqBEdUrQ7SY-E1BL-6bQTe105USq5Lasmrlt8FEX2k8lPIGJWnbXX5_BY9HyAkQLuvkG19cP4KdxqigF-VSOA0UoVHLj5qu_dSUZl28JElRAjZbllirlgaNftCBb1mOITMHH4RDxR_7SM6q2tZob9AnN8OiMz2qZNavCDdhJvDGhStrCvXG8-Zvt4pM9t3H8ZylpzsXD_QAK66uQaibOGuDecfv_usGjhN4LqGLR2s5z5x9RNGW4Gdg">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-tertiary mb-2">The Comfort Haven</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Soft textures, warm ivory lighting, plush velvet.</p>
+</div>
+<div>
+<p class="font-price-display text-price-display text-tertiary mb-4">From ₹2500&nbsp;<span class="font-body-md text-body-md text-on-surface-variant font-normal">/ ride</span></p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-tertiary/30 flex items-center justify-center text-tertiary hover:bg-tertiary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">360</span>
+</button>
+<button class="flex-grow gold-gradient text-on-primary-fixed font-body-md text-body-md font-bold rounded-full soft-glow hover:opacity-90 transition-opacity">
+                                Select Theme
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Celebration Suite -->
+<div class="group flex flex-col bg-surface-container-high rounded-xl overflow-hidden border border-tertiary/10 hover:border-tertiary/40 transition-colors duration-500">
+<div class="relative h-64 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A festive van interior, gold balloons and decor, mini-theatre screen glowing, vibrant social vibe, dynamic lighting, high fidelity render." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKvi5Mjq5qN13zv_R3JSZqvSpoEGoAOsrB3WaLWSoJaaMCIMyzQ2ad3mEnc-ZJvB1D-IxDMMHcTskAJcrr797cClhsR6YD67XXRI0aqEU31IkOCQrY1cErJEJ3i6XjaMZ2gD62B9hBAAq-hWpCqwS3yKiBzd7HNIh6eHj63tMa7zqGY-dh1hjb8MsOL_-LRok0KTcAFHmn6Ew6QNl9gX8zM_W27be1I9igxmOgQtjnjS_oxWbizMg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<span class="absolute top-4 left-4 bg-tertiary-container text-tertiary font-label-caps text-label-caps px-3 py-1 rounded-full uppercase tracking-widest">Popular</span>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between velvet-texture bg-surface-container-high relative">
+<img alt="" class="absolute -top-12 right-4 w-16 h-16 object-contain z-10 drop-shadow-lg" data-alt="Small 3D miniature character figurine, cute style, holding a tiny champagne glass, celebrating, warm lighting." src="https://lh3.googleusercontent.com/aida/AP1WRLuVqBEdUrQ7SY-E1BL-6bQTe105USq5Lasmrlt8FEX2k8lPIGJWnbXX5_BY9HyAkQLuvkG19cP4KdxqigF-VSOA0UoVHLj5qu_dSUZl28JElRAjZbllirlgaNftCBb1mOITMHH4RDxR_7SM6q2tZob9AnN8OiMz2qZNavCDdhJvDGhStrCvXG8-Zvt4pM9t3H8ZylpzsXD_QAK66uQaibOGuDecfv_usGjhN4LqGLR2s5z5x9RNGW4Gdg">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-tertiary mb-2">Celebration Suite</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Festive gold decor, mini-theatre active, vibrant social vibe.</p>
+</div>
+<div>
+<p class="font-price-display text-price-display text-tertiary mb-4">From ₹3500&nbsp;<span class="font-body-md text-body-md text-on-surface-variant font-normal">/ ride</span></p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-tertiary/30 flex items-center justify-center text-tertiary hover:bg-tertiary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">360</span>
+</button>
+<button class="flex-grow gold-gradient text-on-primary-fixed font-body-md text-body-md font-bold rounded-full soft-glow hover:opacity-90 transition-opacity">
+                                Select Theme
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4: Executive Studio -->
+<div class="group flex flex-col bg-surface-container-high rounded-xl overflow-hidden border border-tertiary/10 hover:border-tertiary/40 transition-colors duration-500">
+<div class="relative h-64 w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-700" data-alt="A minimalist executive van interior, focused task lighting, premium espresso machine, sleek dark leather, professional mood, high fidelity render." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA_SYviYm80lHggqm4prRaLgEIyUrxe8GClSOycW4NOydEQiyuUJl3zX4HJnhVbXFlUHTVMoFfydLyNbP-Se3x3ycw3zuov6jlq7xNB0mqAbH4F9Ac19FZd19tAuS3wj-SjOdWTHfZIYsRoFpjlo-YyQs0_u9yw16o89PN2jfCxpHcfoWXVkmAM_jK_JHgWO9GOOrFhTt6-C3sFc-DrcmJB33-0M39mqSpfwQi1Z6sjuCNFD0uznJU')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between velvet-texture bg-surface-container-high relative">
+<img alt="" class="absolute -top-12 right-4 w-16 h-16 object-contain z-10 drop-shadow-lg" data-alt="Small 3D miniature character figurine, cute style, looking at a laptop, professional attire, warm lighting." src="https://lh3.googleusercontent.com/aida/AP1WRLuVqBEdUrQ7SY-E1BL-6bQTe105USq5Lasmrlt8FEX2k8lPIGJWnbXX5_BY9HyAkQLuvkG19cP4KdxqigF-VSOA0UoVHLj5qu_dSUZl28JElRAjZbllirlgaNftCBb1mOITMHH4RDxR_7SM6q2tZob9AnN8OiMz2qZNavCDdhJvDGhStrCvXG8-Zvt4pM9t3H8ZylpzsXD_QAK66uQaibOGuDecfv_usGjhN4LqGLR2s5z5x9RNGW4Gdg">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-tertiary mb-2">Executive Studio</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Minimalist, focused lighting, premium espresso focus.</p>
+</div>
+<div>
+<p class="font-price-display text-price-display text-tertiary mb-4">From ₹10,999 <span class="font-body-md text-body-md text-on-surface-variant font-normal">/ ride</span></p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-tertiary/30 flex items-center justify-center text-tertiary hover:bg-tertiary/10 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">360</span>
+</button>
+<button class="flex-grow gold-gradient text-on-primary-fixed font-body-md text-body-md font-bold rounded-full soft-glow hover:opacity-90 transition-opacity">
+                                Select Theme
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Special Card: Build Your Own -->
+<div class="group flex flex-col bg-transparent rounded-xl overflow-hidden border-2 border-tertiary border-dashed hover:border-solid transition-all duration-500 relative justify-center items-center p-8 text-center min-h-[450px]">
+<div class="absolute inset-0 velvet-texture opacity-50"></div>
+<div class="relative z-10">
+<div class="w-20 h-20 rounded-full bg-tertiary/10 mx-auto flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 0;">tune</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-tertiary mb-4">Build Your Own Mood</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-xs mx-auto">Customize lighting, music, and seating arrangements to create your perfect atmosphere from scratch.</p>
+<button class="px-8 py-3 bg-transparent border border-tertiary text-tertiary font-body-md text-body-md font-bold rounded-full hover:bg-tertiary hover:text-on-primary-fixed transition-colors duration-300">
+                        Start Designing
+                    </button>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="flex items-center justify-center py-section-gap opacity-50">
+<div class="h-[1px] w-24 bg-tertiary"></div>
+<div class="w-3 h-3 rotate-45 border border-tertiary mx-4"></div>
+<div class="h-[1px] w-24 bg-tertiary"></div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full relative bottom-0 border-t border-tertiary/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-margin py-section-gap w-full max-w-7xl mx-auto">
+<div class="mb-6 md:mb-0">
+<span class="font-headline-md text-headline-md text-tertiary">Vantasy</span>
+</div>
+<nav class="flex flex-wrap gap-6 mb-6 md:mb-0 justify-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all duration-300" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all duration-300" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all duration-300" href="#">Press Kit</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-y-[-2px] transition-all duration-300" href="#">Contact</a>
+</nav>
+<div class="font-body-md text-body-md text-on-surface-variant">
+                © 2024 Vantasy Luxury Co. All rights reserved.
+            </div>
+</div>
+</footer>
+
+
+</body></html>

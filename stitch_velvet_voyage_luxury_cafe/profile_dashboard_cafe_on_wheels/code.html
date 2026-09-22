@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Profile Dashboard - Café on Wheels</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#e5e2e1",
+                        "inverse-on-surface": "#31302c",
+                        "on-secondary": "#5f1320",
+                        "inverse-surface": "#e6e2db",
+                        "surface-container-lowest": "#0f0e0b",
+                        "surface-container-highest": "#363530",
+                        "surface-container-low": "#1c1c18",
+                        "on-primary-fixed": "#1b1b1b",
+                        "on-tertiary-fixed-variant": "#5c420c",
+                        "on-surface": "#e6e2db",
+                        "tertiary-container": "#261900",
+                        "surface-dim": "#141310",
+                        "surface-container": "#20201c",
+                        "secondary": "#ffb2b7",
+                        "surface-variant": "#363530",
+                        "on-secondary-fixed-variant": "#7c2a35",
+                        "error-container": "#93000a",
+                        "secondary-container": "#7f2c37",
+                        "on-primary-container": "#848383",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "on-primary": "#313030",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary": "#c8c6c5",
+                        "on-secondary-container": "#ff9da5",
+                        "secondary-fixed-dim": "#ffb2b7",
+                        "surface-container-high": "#2b2a26",
+                        "primary-container": "#1b1b1b",
+                        "surface": "#141310",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3935",
+                        "on-tertiary-container": "#9e7f44",
+                        "on-tertiary-fixed": "#271900",
+                        "inverse-primary": "#5f5e5e",
+                        "on-primary-fixed-variant": "#474746",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#ffdadb",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#ffdea7",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#444748",
+                        "on-secondary-fixed": "#40000e",
+                        "background": "#141310",
+                        "tertiary": "#e6c180",
+                        "outline": "#8e9192",
+                        "surface-tint": "#c8c6c5",
+                        "on-background": "#e6e2db",
+                        "on-tertiary": "#412d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "unit": "8px",
+                        "section-gap": "48px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "body-md": ["Sora"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Sora"],
+                        "headline-md": ["Playfair Display"],
+                        "label-caps": ["Sora"],
+                        "price-display": ["Sora"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "price-display": ["20px", { "lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #141310; color: #e6e2db; }
+        .gold-gradient { background: linear-gradient(45deg, #e6c180, #ffdea7); }
+        .gold-border { border-color: rgba(230, 193, 128, 0.3); }
+        .gold-border-active { border-color: rgba(230, 193, 128, 1); }
+        .gold-glow { box-shadow: 0 0 20px rgba(230, 193, 128, 0.15); }
+        .velvet-noise { background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.03"/%3E%3C/svg%3E'); }
+    </style>
+</head>
+<body class="font-body-md text-on-surface velvet-noise min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-background/95 backdrop-blur-md docked full-width top-0 z-50 border-b border-tertiary/30">
+<div class="flex justify-between items-center w-full px-container-margin h-20 max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-lg text-tertiary tracking-tight italic">Café on Wheels</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">The Van</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Themes</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Experience</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Events</a>
+<a class="font-label-caps text-label-caps text-tertiary border-b border-tertiary pb-1" href="#">Profile</a>
+</nav>
+<button class="hidden md:block gold-gradient text-primary-container font-label-caps text-label-caps px-6 py-3 rounded-full hover:shadow-[0_0_20px_rgba(230,193,128,0.15)] transition-all">Book Now</button>
+<button class="md:hidden text-tertiary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-container-margin py-section-gap flex flex-col md:flex-row gap-section-gap">
+<!-- Sidebar Navigation -->
+<aside class="w-full md:w-64 shrink-0">
+<div class="flex flex-col gap-4 sticky top-32">
+<a class="flex items-center gap-3 p-4 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">Profile Info</span>
+</a>
+<a class="flex items-center gap-3 p-4 rounded-lg bg-surface-container border border-tertiary/30 text-tertiary gold-glow transition-colors" href="#">
+<span class="material-symbols-outlined">directions_car</span>
+<span class="font-label-caps text-label-caps">My Rides</span>
+</a>
+<a class="flex items-center gap-3 p-4 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-caps text-label-caps">Saved Themes</span>
+</a>
+<a class="flex items-center gap-3 p-4 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">payment</span>
+<span class="font-label-caps text-label-caps">Payment Methods</span>
+</a>
+<a class="flex items-center gap-3 p-4 rounded-lg text-on-surface-variant hover:text-tertiary hover:bg-surface-container transition-colors" href="#">
+<span class="material-symbols-outlined">tune</span>
+<span class="font-label-caps text-label-caps">Preferences</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<section class="flex-grow flex flex-col gap-section-gap">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-8">My Rides</h1>
+<!-- Sub Tabs -->
+<div class="flex gap-6 border-b border-surface-variant mb-8">
+<button class="pb-4 font-label-caps text-label-caps text-tertiary border-b-2 border-tertiary">Upcoming</button>
+<button class="pb-4 font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors">Past</button>
+<button class="pb-4 font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors">Cancelled</button>
+</div>
+<!-- Upcoming Ride Card -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-tertiary/20 flex flex-col md:flex-row group hover:border-tertiary/50 transition-colors duration-500">
+<div class="w-full md:w-2/5 h-64 md:h-auto relative">
+<img class="w-full h-full object-cover" data-alt="Cinematic 3D render of the 'Romantic Date' theme inside a luxury van. Intimate 2-seater velvet lounge nook, warm candle-style LED lighting, rose petal accents, soft draped curtains, a small champagne-gold side table with glasses. Moody, refined atmosphere, warm amber glow. High-end boutique feel. 3D miniature figurine couple cuddled on the seat." src="https://lh3.googleusercontent.com/aida/AP1WRLtbdYYlbr8-vzgRBNwBBX3H4MigIV7HbkdyaPXgzHooXH-cha4qT91q2RGR0OjcvWT51XL7bXwEW_tT8uYPUcwy_gzSffOYxRhDxaJtPHMdlxIbyp9YraEv46OzVX1o8rPNT_Hw9ErTbxXeQXW_x4GVnFwl5nCBqBxr3frefqpjkp-bLGGaFo2aIcPF6i6Ln5Vry5KZSWzGoNmWcQLeVF1t6jTUmgem5lujBJffKx3nkAEfjpDOWD5C"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent md:hidden"></div>
+</div>
+<div class="p-8 flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Midnight Soiree</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">location_on</span>
+                                        Marine Drive
+                                    </p>
+</div>
+<span class="bg-tertiary/10 text-tertiary border border-tertiary/30 px-3 py-1 rounded-full font-label-caps text-[10px] uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                    Confirmed
+                                </span>
+</div>
+<div class="grid grid-cols-2 gap-4 my-6">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1 uppercase tracking-widest">Date &amp; Time</p>
+<p class="font-body-md text-body-md text-on-surface">Fri, 15 Mar | 8:00 PM</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1 uppercase tracking-widest">Distance</p>
+<p class="font-body-md text-body-md text-on-surface">12 km</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-end pt-6 border-t border-surface-variant">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant mb-1 uppercase tracking-widest">Total</p>
+<p class="font-price-display text-price-display text-tertiary">₹16,910</p>
+</div>
+<button class="text-tertiary font-label-caps text-label-caps border border-tertiary/30 px-6 py-2 rounded-full hover:bg-tertiary/10 transition-colors">Manage</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Saved Themes Section -->
+<div class="mt-8">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Saved Themes</h2>
+<a class="text-tertiary font-label-caps text-label-caps hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Theme Card 1 -->
+<div class="bg-surface-container rounded-xl overflow-hidden border border-surface-variant group hover:border-tertiary/30 transition-colors relative">
+<div class="h-48 relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Cinematic 3D render of the 'Comfort Drive' theme inside a luxury van. Cozy plush velvet sofa with soft blankets and cushions, warm dim lighting, a small elegant ambient diffuser with a visible mist. Relaxing, serene atmosphere. 3D miniature figurine pair relaxing comfortably on the couch." src="https://lh3.googleusercontent.com/aida/AP1WRLuL8dfxHaJ1kt-wgHEZ6Nn1fdP6HF7ErijbkMNDUZEhBJ6e9OzLzqUlAC6KheNV-4C9fCq7MWg2yxR1ewVQkfHTeAbLs2ImhPOHBzlf-3m62Vd7fSwe2WDmxHLQY5XS0KwXOub4MIYsUCKHjI3nbFKFQBbx1vMwrkDz-WapInxLmGIszcI17fqg-BO-Rg45BvsdjsaHIOhIRGUl43xal1WKVwzk0sBV1aFDamh_reogY8H3EifoXo0lww"/>
+<button class="absolute top-4 right-4 text-tertiary bg-background/50 backdrop-blur-sm p-2 rounded-full">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</button>
+</div>
+<div class="p-6">
+<h4 class="font-headline-md text-headline-md text-on-surface mb-2">Comfort Drive</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Plush velvet, warm ambient lighting, and serene mist for ultimate relaxation.</p>
+<a class="gold-gradient text-primary-container font-label-caps text-label-caps px-6 py-3 rounded-full hover:shadow-[0_0_20px_rgba(230,193,128,0.15)] transition-all inline-block text-center w-full" href="#">Book Now</a>
+</div>
+</div>
+<!-- Empty Placeholder for Grid Balance -->
+<div class="bg-surface-container rounded-xl border border-surface-variant border-dashed flex flex-col items-center justify-center p-8 text-center min-h-[300px]">
+<span class="material-symbols-outlined text-tertiary/50 text-4xl mb-4">explore</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Discover more exclusive themes for your next journey.</p>
+<button class="text-tertiary font-label-caps text-label-caps border border-tertiary/30 px-6 py-2 rounded-full hover:bg-tertiary/10 transition-colors">Explore Themes</button>
+</div>
+</div>
+</div>
+<!-- Preferences -->
+<div class="mt-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Preferences</h2>
+<div class="bg-surface-container rounded-xl p-8 border border-surface-variant">
+<div class="mb-8">
+<h4 class="font-body-lg text-body-lg text-on-surface mb-4">Preferred Moods</h4>
+<div class="flex flex-wrap gap-3">
+<span class="bg-tertiary text-primary-container font-label-caps text-label-caps px-4 py-2 rounded-full cursor-pointer">Romantic</span>
+<span class="bg-surface-variant text-on-surface-variant border border-surface-variant hover:border-tertiary/50 font-label-caps text-label-caps px-4 py-2 rounded-full cursor-pointer transition-colors">Social</span>
+<span class="bg-tertiary text-primary-container font-label-caps text-label-caps px-4 py-2 rounded-full cursor-pointer">Quiet</span>
+</div>
+</div>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface mb-4">Cuisine Interests</h4>
+<div class="flex flex-wrap gap-3">
+<span class="bg-tertiary text-primary-container font-label-caps text-label-caps px-4 py-2 rounded-full cursor-pointer">Artisan Coffee</span>
+<span class="bg-surface-variant text-on-surface-variant border border-surface-variant hover:border-tertiary/50 font-label-caps text-label-caps px-4 py-2 rounded-full cursor-pointer transition-colors">Patisserie</span>
+<span class="bg-surface-variant text-on-surface-variant border border-surface-variant hover:border-tertiary/50 font-label-caps text-label-caps px-4 py-2 rounded-full cursor-pointer transition-colors">Fine Dining</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest full-width py-12 border-t border-tertiary/20 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-container-margin max-w-7xl mx-auto gap-gutter">
+<div class="font-display-lg text-headline-md text-tertiary">Café on Wheels</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">© 2024 Café on Wheels. Handcrafted Indulgence on the Move.</p>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Partner with Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Fleet Locations</a>
+</div>
+</div>
+</footer>
+</body></html>

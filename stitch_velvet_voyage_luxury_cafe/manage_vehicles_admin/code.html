@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manage Vehicles - LuxeCafe Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Sora:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e9192",
+                        "on-surface": "#e6e2db",
+                        "on-secondary-container": "#ff9da5",
+                        "surface-container-highest": "#363530",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#261900",
+                        "inverse-on-surface": "#31302c",
+                        "error-container": "#93000a",
+                        "background": "#141310",
+                        "surface-dim": "#141310",
+                        "surface-container": "#20201c",
+                        "on-background": "#e6e2db",
+                        "on-primary-fixed": "#1b1b1b",
+                        "secondary": "#ffb2b7",
+                        "on-tertiary-fixed-variant": "#5c420c",
+                        "on-secondary": "#5f1320",
+                        "primary-container": "#1b1b1b",
+                        "secondary-container": "#7f2c37",
+                        "tertiary-fixed": "#ffdea7",
+                        "surface-container-low": "#1c1c18",
+                        "on-primary-fixed-variant": "#474746",
+                        "secondary-fixed": "#ffdadb",
+                        "on-secondary-fixed-variant": "#7c2a35",
+                        "on-tertiary-container": "#9e7f44",
+                        "primary": "#c8c6c5",
+                        "tertiary": "#e6c180",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#40000e",
+                        "surface-variant": "#363530",
+                        "surface-container-lowest": "#0f0e0b",
+                        "inverse-primary": "#5f5e5e",
+                        "secondary-fixed-dim": "#ffb2b7",
+                        "on-primary": "#313030",
+                        "on-tertiary-fixed": "#271900",
+                        "outline-variant": "#444748",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3935",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e6e2db",
+                        "surface-container-high": "#2b2a26",
+                        "surface": "#141310",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "surface-tint": "#c8c6c5",
+                        "on-tertiary": "#412d00",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#848383",
+                        "on-surface-variant": "#c4c7c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "section-gap": "48px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Sora"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Sora"],
+                        "price-display": ["Sora"],
+                        "body-md": ["Sora"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "price-display": ["20px", { "lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        .btn-gold {
+            background: linear-gradient(45deg, #C9A667, #E6D2AA);
+            color: #1B1B1B;
+            box-shadow: 0 0 20px rgba(201, 166, 103, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md relative overflow-x-hidden">
+<div class="texture-overlay fixed inset-0 z-0"></div>
+<!-- SideNavBar -->
+<nav class="bg-surface-container-lowest border-r border-secondary/30 h-screen w-64 fixed left-0 top-0 flex flex-col h-full py-6 px-4 z-40 hidden md:flex">
+<div class="mb-section-gap">
+<h1 class="font-headline-md text-headline-md font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+                LuxeCafe
+            </h1>
+</div>
+<div class="flex-grow flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-caps text-label-caps">Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-secondary-fixed bg-secondary-container font-bold scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+<span class="font-label-caps text-label-caps">Vehicles</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-caps text-label-caps">Revenue</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-caps text-label-caps">Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200 group mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</div>
+<div class="mt-section-gap flex items-center gap-3 px-2">
+<img alt="Cafe Admin Profile" class="w-10 h-10 rounded-full object-cover border border-secondary/30" data-alt="A small circular avatar of a professional barista or manager in a dimly lit, high-end cafe setting, soft cinematic lighting. Deep blacks, crisp whites, subtle gold rim lighting on the figure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4KM657A-MplodICfWpG-NUYr-LSQWtLRbXLb_IphxURlXAfP4oNmmBWBfRt0m4gCkOGLaQmxWv_-b2YzeXhjje2kRGShXVq5eV1630SqgvCMFq9u6-QeUIRCH_h1FtWlkdYVyOpeSI3kETcxnJcUCxR0EcqluG9jKq3iX7qeahghY5lDg4RU3ArGJVo55nPF6Sv_-NkGDBVhC7JyH4S0zA9oAmMWstGybDQQSRcnrM1eddwpEyso"/>
+<div>
+<p class="font-body-md text-body-md font-bold">LuxeCafe Admin</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Management Portal</p>
+</div>
+</div>
+</nav>
+<!-- TopNavBar (Mobile) -->
+<header class="bg-surface border-b border-secondary/30 flex justify-between items-center px-8 z-40 fixed top-0 w-full h-16 md:hidden">
+<h1 class="font-headline-md text-headline-md font-bold text-secondary flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+</h1>
+<button class="text-secondary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="md:ml-64 pt-20 md:pt-8 p-container-margin min-h-screen relative z-10">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-section-gap gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Fleet Management</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitor and dispatch your active LuxeCafe vehicles.</p>
+</div>
+<button class="btn-gold font-label-caps text-label-caps px-6 py-3 rounded-lg flex items-center gap-2 hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add New Vehicle
+            </button>
+</div>
+<!-- Vehicles Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-gutter">
+<!-- Vehicle Card 1 -->
+<div class="bg-surface-container rounded-xl border border-secondary/30 p-6 flex flex-col md:flex-row gap-6 relative overflow-hidden group hover:border-[#C9A667]/50 transition-colors">
+<div class="w-full md:w-48 h-32 rounded-lg bg-surface-container-low flex-shrink-0 relative overflow-hidden border border-secondary/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A highly detailed 3D render of a luxurious, matte black cafe van parked in an elegant urban setting at dusk. The van features subtle champagne gold accents and large open side panels revealing a pristine espresso machine. The lighting is dramatic and cinematic, emphasizing the velvet charcoal and metallic textures of the vehicle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU_mweDzLuywNWtQMsiC5MhxH_sK7K5ufvKr63WPldnynQCi9hHX3Sv51QCHPSzoI1ga6eT6NUnFBqRB18aW30XC__MkDygUMKYLsMN6__QaHOrVIROKyha3UmOyIsqsFMLd_DVzCApA_6fubgtj_31FW-G1P6sr7Czo-GmH9hJaEpSASY7rLBLvt8AGYleh2y27oG6naRD7rcPFS1l6qBsfRKb6BJK2ZVKFPWmpH4iLerSL30rDs"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-headline-md text-headline-md text-secondary">V-01</h3>
+<span class="bg-[#121212] text-[#e6e2db] font-label-caps text-[10px] px-2 py-1 rounded border border-[#C9A667]/30">Signature</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mercedes Sprinter Luxe</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-[16px] animate-pulse">radio_button_checked</span>
+<span class="font-label-caps text-label-caps">Available</span>
+</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-secondary/10 pt-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Capacity</p>
+<p class="font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                                2 Baristas
+                            </p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Location</p>
+<p class="font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+                                Downtown Plaza
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Vehicle Card 2 -->
+<div class="bg-surface-container rounded-xl border border-secondary/30 p-6 flex flex-col md:flex-row gap-6 relative overflow-hidden group hover:border-[#C9A667]/50 transition-colors">
+<div class="w-full md:w-48 h-32 rounded-lg bg-surface-container-low flex-shrink-0 relative overflow-hidden border border-secondary/10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A highly detailed 3D render of a luxurious, matte black cafe van driving through a sophisticated cityscape at night. Soft streetlights reflect off the champagne gold detailing on the van's exterior. The aesthetic is modern luxury, dark mode, with deep charcoal tones and warm golden highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPpo43BP23uqPZiFEVg6mCLrnu9IGD_2MqP1zABoI2K-9Jj5F0PuL2cslm2OJYRhUthL79W5GxkbbB3WBxs6YGbZqHVQtfG42Kl9YkJ9PvoZu66z8tUbIkXYDRLoBFOhhWvK3SBb8VlcaUiv-NxBAuX7B9LBFiQJDOQUkSW7c6zJ7fqIcVetFQVQRFQffLCVlKJS_sXM9OD8H7R9c9QLDmpNAuOatfUQDe2k3z5rS0EIkUYyw4a2g"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">V-02</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Ford Transit Custom</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">directions_car</span>
+<span class="font-label-caps text-label-caps">In-Transit</span>
+</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-secondary/10 pt-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Capacity</p>
+<p class="font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                                3 Baristas
+                            </p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Destination</p>
+<p class="font-body-md text-body-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">route</span>
+                                Corporate Park West
+                            </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Vehicle Card 3 (Maintenance) -->
+<div class="bg-surface-container rounded-xl border border-error/30 p-6 flex flex-col md:flex-row gap-6 relative overflow-hidden group hover:border-error/50 transition-colors">
+<div class="w-full md:w-48 h-32 rounded-lg bg-surface-container-low flex-shrink-0 relative overflow-hidden border border-secondary/10 opacity-70">
+<img class="w-full h-full object-cover grayscale mix-blend-luminosity" data-alt="A highly detailed 3D render of a luxurious, matte black cafe van parked inside a sleek, dimly lit premium garage or service center. The champagne gold trim is slightly muted. The aesthetic is industrial luxury, utilizing deep shadows and focused spotlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4y2wRteIvEApXCXjucFgMHBOWJCLIWbh_-GpV48Ajnzyb_0m9r5jeZ0u5EwYaJBKoZGIj9eUeTtwGskKGqu9FqY3GhEyZpiy2FTJnnTO8Y935tfJ15cd6LlzFaRJXMSvxDggSklgODj8gIAbR2Z4SW7EZc7fI8qMmmLZuUXgeLW5sdNxHchHmTAk4b7LPrm14R3EdDJKPIPinZ6AMylycsX6QH6QcAyJbo-6YRzCFoy7MrqRwGCg"/>
+</div>
+<div class="flex-grow flex flex-col justify-between">
+<div class="flex justify-between items-start mb-4">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">V-03</h3>
+<span class="material-symbols-outlined text-error text-[20px]" title="Maintenance Due">warning</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Mercedes Sprinter Luxe</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">build</span>
+<span class="font-label-caps text-label-caps">Maintenance</span>
+</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 border-t border-error/10 pt-4">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Capacity</p>
+<p class="font-body-md text-body-md flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+                                2 Baristas
+                            </p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Location</p>
+<p class="font-body-md text-body-md flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">warehouse</span>
+                                Service Depot Alpha
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

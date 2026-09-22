@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Menu Management - LuxeCafe</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#8e9192",
+                        "on-surface": "#e6e2db",
+                        "on-secondary-container": "#ff9da5",
+                        "surface-container-highest": "#363530",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#261900",
+                        "inverse-on-surface": "#31302c",
+                        "error-container": "#93000a",
+                        "background": "#141310",
+                        "surface-dim": "#141310",
+                        "surface-container": "#20201c",
+                        "on-background": "#e6e2db",
+                        "on-primary-fixed": "#1b1b1b",
+                        "secondary": "#ffb2b7",
+                        "on-tertiary-fixed-variant": "#5c420c",
+                        "on-secondary": "#5f1320",
+                        "primary-container": "#1b1b1b",
+                        "secondary-container": "#7f2c37",
+                        "tertiary-fixed": "#ffdea7",
+                        "surface-container-low": "#1c1c18",
+                        "on-primary-fixed-variant": "#474746",
+                        "secondary-fixed": "#ffdadb",
+                        "on-secondary-fixed-variant": "#7c2a35",
+                        "on-tertiary-container": "#9e7f44",
+                        "primary": "#c8c6c5",
+                        "tertiary": "#e6c180",
+                        "primary-fixed": "#e5e2e1",
+                        "on-secondary-fixed": "#40000e",
+                        "surface-variant": "#363530",
+                        "surface-container-lowest": "#0f0e0b",
+                        "inverse-primary": "#5f5e5e",
+                        "secondary-fixed-dim": "#ffb2b7",
+                        "on-primary": "#313030",
+                        "on-tertiary-fixed": "#271900",
+                        "outline-variant": "#444748",
+                        "on-error": "#690005",
+                        "surface-bright": "#3a3935",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#e6e2db",
+                        "surface-container-high": "#2b2a26",
+                        "surface": "#141310",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "surface-tint": "#c8c6c5",
+                        "on-tertiary": "#412d00",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-primary-container": "#848383",
+                        "on-surface-variant": "#c4c7c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "container-margin": "24px",
+                        "section-gap": "48px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Sora"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Sora"],
+                        "price-display": ["Sora"],
+                        "body-md": ["Sora"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "price-display": ["20px", { "lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141310;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #363530;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #444748;
+        }
+        
+        /* Subtle noise texture */
+        .bg-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        /* Metallic Gradient for active states */
+        .gold-gradient-text {
+            background: linear-gradient(45deg, #C9A667, #E6D2AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gold-gradient-bg {
+            background: linear-gradient(45deg, #C9A667, #E6D2AA);
+        }
+        
+        .gold-border {
+            border-color: rgba(201, 166, 103, 0.3);
+        }
+        .gold-border-active {
+            border-color: rgba(201, 166, 103, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md bg-noise min-h-screen flex selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopNavBar (Mobile Only) -->
+<nav class="md:hidden fixed top-0 w-full h-16 bg-surface-container-lowest border-b gold-border z-50 flex justify-between items-center px-gutter">
+<div class="font-headline-md text-headline-md font-bold text-tertiary-fixed">
+            LuxeCafe
+        </div>
+<div class="flex items-center gap-4 text-on-surface">
+<span class="material-symbols-outlined hover:text-tertiary-fixed cursor-pointer transition-colors" data-icon="search">search</span>
+<span class="material-symbols-outlined hover:text-tertiary-fixed cursor-pointer transition-colors" data-icon="menu">menu</span>
+</div>
+</nav>
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-lowest z-40 border-r border-tertiary-fixed/10 py-6 px-4">
+<!-- Brand -->
+<div class="mb-12 px-2">
+<h1 class="font-headline-md text-headline-md font-bold text-tertiary-fixed tracking-tight">LuxeCafe</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2 opacity-70">Management Portal</p>
+</div>
+<!-- Navigation -->
+<nav class="flex-1 flex flex-col gap-2">
+<!-- Non-Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<!-- Non-Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-caps text-label-caps">Bookings</span>
+</a>
+<!-- Active Tab (Menu Management logic mapped to local_cafe for this prompt) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-tertiary-fixed bg-tertiary-fixed font-bold scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="local_cafe" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+<span class="font-label-caps text-label-caps text-on-primary-fixed">Menu Management</span>
+</a>
+<!-- Non-Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-caps text-label-caps">Revenue</span>
+</a>
+<!-- Non-Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-label-caps text-label-caps">Schedule</span>
+</a>
+<!-- Non-Active Tab -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
+</nav>
+<!-- User Profile Area -->
+<div class="mt-auto border-t border-tertiary-fixed/10 pt-6 px-2 flex items-center gap-3">
+<img alt="Cafe Admin Profile" class="w-10 h-10 rounded-full object-cover border border-tertiary-fixed/30" data-alt="A macro shot of a luxurious, dark roasted coffee bean resting on a sleek black reflective surface, moody lighting, highly detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC99NYVZYKgqmQWozeZlniAWQFovSGt-7JQ8djsp6zBhCxphCX7c71JIcW2E4efpFFBMSGOI8luiDE5hWHc3-GQFWDgdoJMUOd19yka1gC-FJB2L1YHCOcE3szWEtuWSGmsjwwRIgsOgTT1PwGt_Vzg4vjKpuwZx-Y87132PpR1z6lmfYiUyvonsI2Hh1kSwxMnY5buHK6Jyei0k7hkcyhOvyphQipDtPZpD0kr_oyRf-dmpbw1mo"/>
+<div>
+<p class="font-body-md text-body-md font-bold text-on-surface">Admin User</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">LuxeCafe Manager</p>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 pt-20 md:pt-12 px-container-margin pb-24 min-h-screen">
+<!-- Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Menu Catalog</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-xl">Curate your offerings. Ensure high-quality imagery and precise descriptions for the ultimate digital menu experience.</p>
+</div>
+<button class="gold-gradient-bg text-on-primary-fixed font-label-caps text-label-caps px-6 py-3 rounded-DEFAULT hover:opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(201,166,103,0.15)] whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                ADD NEW ITEM
+            </button>
+</header>
+<!-- TopAppBar Context (Search & Filter for Desktop) -->
+<div class="hidden md:flex justify-between items-center mb-8 border-b gold-border pb-4">
+<div class="flex items-center gap-6">
+<!-- Category Tabs -->
+<button class="font-label-caps text-label-caps text-tertiary-fixed border-b-2 border-tertiary-fixed pb-1">SIGNATURE COFFEE</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors pb-1">PATISSERIE</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors pb-1">BREAKFAST</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-colors pb-1">FULL MEALS</button>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="bg-surface-container-high border-none rounded-DEFAULT py-2 pl-10 pr-4 font-body-md text-body-md text-on-surface focus:ring-1 focus:ring-tertiary-fixed placeholder-on-surface-variant/50 w-64" placeholder="Search items..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-tertiary-fixed cursor-pointer transition-colors" data-icon="filter_list">filter_list</span>
+</div>
+</div>
+<!-- Mobile Category Tabs (Scrollable) -->
+<div class="md:hidden flex overflow-x-auto gap-6 mb-8 border-b gold-border pb-2 no-scrollbar">
+<button class="font-label-caps text-label-caps text-tertiary-fixed border-b-2 border-tertiary-fixed pb-2 whitespace-nowrap">SIGNATURE COFFEE</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant whitespace-nowrap pb-2">PATISSERIE</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant whitespace-nowrap pb-2">BREAKFAST</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant whitespace-nowrap pb-2">FULL MEALS</button>
+</div>
+<!-- Layout Grid: Table & Form -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Item Table (Takes up 2/3 on LG) -->
+<div class="lg:col-span-2">
+<div class="bg-surface-container rounded-lg border border-tertiary-fixed/10 overflow-hidden shadow-2xl shadow-black/50">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-tertiary-fixed/10 bg-surface-container-low">
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant w-16">ITEM</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">DETAILS</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">PRICE</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant text-center">STATUS</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant text-right">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-tertiary-fixed/10">
+<!-- Item Row 1 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-4">
+<img class="w-12 h-12 rounded-full object-cover border border-tertiary-fixed/20" data-alt="A top-down view of an intricate latte art swan on a perfectly pulled dark espresso in a black ceramic cup, resting on a dark wood table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNCcX-Q3mODm8p8-1q_Wxe_j_mhLknDqYMKv5f69BXjkxSS7My20o8ekM5iC72q3v65KuHYams9D1STtdhzbZbRUf6FLh7QRgx4VQAowq9SzacNQi_XPeJrSeQ1SyiBoNLyWRCbt699oQ5JYoXu7SLQKDt-cmGvLiAdcsEkTDDtlN83P0xCJHFE_xbRzC54E1hCkwDq3Xdd-gw3GhUUPmFBLERs1yIwHphI90KVQ9hYZqufeZrRhA"/>
+</td>
+<td class="p-4">
+<p class="font-body-lg text-body-lg text-on-surface font-semibold mb-1">Velvet Obsidian Latte</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm truncate max-w-[200px]">Activated charcoal infused espresso with steamed macadamia milk.</p>
+</td>
+<td class="p-4">
+<p class="font-price-display text-price-display text-tertiary-fixed">₹450</p>
+</td>
+<td class="p-4 text-center">
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary-fixed"></div>
+</label>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-3 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item Row 2 -->
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="p-4">
+<img class="w-12 h-12 rounded-full object-cover border border-tertiary-fixed/20" data-alt="A close-up of a golden flaky croissant next to a small white espresso cup on a dark slate background, dramatic side lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPQcsnRK9gzzyRk5h16g1PARKZLwA7cGTLxgaAoFvGotJNQoT0dKTMIWTFUk08DwaUuDhit6keLMtIBO9aPxwUNGexrq64PHSU-cPulQ8WyMHpslCT_F-7WVO2s1NOI9wm911cz1og899QktXvcNv2qFB2AYjzF3y8HOBVQ1HjQuULqF4cnQUJ8y79FXq5z3FMX-7eq2Ib_M4ZWb9ARWbxSsGz-T6-TZgZVdOqeZBPAdbKMxEBtYw"/>
+</td>
+<td class="p-4">
+<p class="font-body-lg text-body-lg text-on-surface font-semibold mb-1">Golden Flake Espresso</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm truncate max-w-[200px]">Double ristretto shot pulled over edible 24k gold leaf flakes.</p>
+</td>
+<td class="p-4">
+<p class="font-price-display text-price-display text-tertiary-fixed">₹850</p>
+</td>
+<td class="p-4 text-center">
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary-fixed"></div>
+</label>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-3 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Item Row 3 (Inactive) -->
+<tr class="hover:bg-surface-container-high transition-colors group opacity-60">
+<td class="p-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant border border-tertiary-fixed/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">image</span>
+</div>
+</td>
+<td class="p-4">
+<p class="font-body-lg text-body-lg text-on-surface font-semibold mb-1">Seasonal Pour Over</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm truncate max-w-[200px]">Single origin Ethiopian Yirgacheffe, floral and bright.</p>
+</td>
+<td class="p-4">
+<p class="font-price-display text-price-display text-tertiary-fixed">₹550</p>
+</td>
+<td class="p-4 text-center">
+<!-- Toggle Switch (Off) -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-surface after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary-fixed"></div>
+</label>
+</td>
+<td class="p-4 text-right">
+<div class="flex items-center justify-end gap-3 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-on-surface-variant hover:text-tertiary-fixed transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Right Column: Add Item Form (Glassmorphism inspired dark variant) -->
+<div class="lg:col-span-1">
+<div class="bg-surface-container/80 backdrop-blur-md rounded-lg border border-tertiary-fixed/20 p-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)] sticky top-24">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-tertiary-fixed/10 pb-4">Add New Item</h3>
+<form class="flex flex-col gap-5">
+<!-- Image Upload Area -->
+<div class="border-2 border-dashed border-tertiary-fixed/30 rounded-lg p-6 text-center hover:border-tertiary-fixed/60 transition-colors cursor-pointer bg-surface-container-lowest/50 group">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-tertiary-fixed mb-2 block transition-colors">add_photo_alternate</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant group-hover:text-on-surface">Upload High-Res Image</p>
+<p class="text-xs text-on-surface-variant/50 mt-1">PNG or JPG up to 5MB</p>
+</div>
+<!-- Name Input -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Item Name</label>
+<input class="w-full bg-surface-container-lowest border border-tertiary-fixed/20 rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:border-tertiary-fixed focus:ring-1 focus:ring-tertiary-fixed transition-colors placeholder-on-surface-variant/30" placeholder="e.g. Noir Espresso" type="text"/>
+</div>
+<!-- Price & Category Row -->
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Price (₹)</label>
+<input class="w-full bg-surface-container-lowest border border-tertiary-fixed/20 rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:border-tertiary-fixed focus:ring-1 focus:ring-tertiary-fixed transition-colors placeholder-on-surface-variant/30" placeholder="0.00" type="number"/>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Category</label>
+<select class="w-full bg-surface-container-lowest border border-tertiary-fixed/20 rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:border-tertiary-fixed focus:ring-1 focus:ring-tertiary-fixed transition-colors appearance-none cursor-pointer">
+<option>Signature Coffee</option>
+<option>Patisserie</option>
+<option>Breakfast</option>
+<option>Full Meals</option>
+</select>
+</div>
+</div>
+<!-- Description Input -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Description</label>
+<textarea class="w-full bg-surface-container-lowest border border-tertiary-fixed/20 rounded-DEFAULT px-4 py-3 font-body-md text-body-md text-on-surface focus:border-tertiary-fixed focus:ring-1 focus:ring-tertiary-fixed transition-colors placeholder-on-surface-variant/30 resize-none" placeholder="Elaborate flavor profile..." rows="3"></textarea>
+</div>
+<!-- Actions -->
+<div class="flex gap-4 mt-4">
+<button class="flex-1 bg-transparent border border-tertiary-fixed/50 text-tertiary-fixed font-label-caps text-label-caps py-3 rounded-DEFAULT hover:bg-tertiary-fixed/10 transition-colors" type="button">CANCEL</button>
+<button class="flex-1 gold-gradient-bg text-on-primary-fixed font-label-caps text-label-caps py-3 rounded-DEFAULT hover:opacity-90 transition-opacity font-bold" type="button">SAVE ITEM</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+</body></html>

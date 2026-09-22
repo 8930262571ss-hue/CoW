@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Celebration Suite: A Festive Voyage - Vantasy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Sora:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#1c1c18",
+                        "on-secondary-fixed": "#40000e",
+                        "surface-dim": "#141310",
+                        "primary": "#c8c6c5",
+                        "on-tertiary-container": "#9e7f44",
+                        "outline-variant": "#444748",
+                        "secondary-container": "#7f2c37",
+                        "inverse-surface": "#e6e2db",
+                        "tertiary": "#e6c180",
+                        "on-secondary": "#5f1320",
+                        "tertiary-fixed": "#ffdea7",
+                        "on-primary-container": "#848383",
+                        "inverse-primary": "#5f5e5e",
+                        "on-secondary-fixed-variant": "#7c2a35",
+                        "surface-container-highest": "#363530",
+                        "on-secondary-container": "#ff9da5",
+                        "surface-variant": "#363530",
+                        "on-tertiary-fixed": "#271900",
+                        "outline": "#8e9192",
+                        "error": "#ffb4ab",
+                        "on-primary": "#313030",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-tertiary-fixed-variant": "#5c420c",
+                        "tertiary-fixed-dim": "#e6c180",
+                        "surface-container-lowest": "#0f0e0b",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#ffdadb",
+                        "on-error-container": "#ffdad6",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1b1b1b",
+                        "surface-bright": "#3a3935",
+                        "surface-container-high": "#2b2a26",
+                        "on-primary-fixed-variant": "#474746",
+                        "inverse-on-surface": "#31302c",
+                        "tertiary-container": "#261900",
+                        "surface": "#141310",
+                        "surface-container": "#20201c",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb2b7",
+                        "primary-container": "#1b1b1b",
+                        "on-background": "#e6e2db",
+                        "on-surface": "#e6e2db",
+                        "surface-tint": "#c8c6c5",
+                        "background": "#141310",
+                        "on-tertiary": "#412d00",
+                        "secondary": "#ffb2b7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-margin": "24px",
+                        "unit": "8px",
+                        "gutter": "16px",
+                        "section-gap": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Sora"],
+                        "display-lg": ["Playfair Display"],
+                        "label-caps": ["Sora"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "price-display": ["Sora"],
+                        "body-md": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "price-display": ["20px", { "lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #141310;
+            color: #e6e2db;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(45deg, #c9a667, #e6d2aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(45deg, #c9a667, #e6d2aa);
+            color: #1b1b1b;
+        }
+
+        .gold-border {
+            border: 1px solid rgba(201, 166, 103, 0.3);
+        }
+        
+        .gold-border-active {
+            border: 1px solid rgba(201, 166, 103, 1);
+        }
+
+        .subtle-glow {
+            box-shadow: 0 0 20px rgba(201, 166, 103, 0.15);
+        }
+        
+        /* Custom Checkbox */
+        .custom-checkbox {
+            appearance: none;
+            background-color: transparent;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.15em;
+            height: 1.15em;
+            border: 1px solid rgba(201, 166, 103, 0.5);
+            border-radius: 0.15em;
+            display: grid;
+            place-content: center;
+        }
+        
+        .custom-checkbox::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #c9a667;
+            background-color: #c9a667;
+            transform-origin: center;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+        
+        .custom-checkbox:checked::before {
+            transform: scale(1);
+        }
+        
+        .custom-radio {
+            appearance: none;
+            background-color: transparent;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 1.2em;
+            height: 1.2em;
+            border: 1px solid rgba(201, 166, 103, 0.5);
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+        }
+        
+        .custom-radio::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em #c9a667;
+            background-color: #c9a667;
+        }
+        
+        .custom-radio:checked::before {
+            transform: scale(1);
+        }
+
+        .input-focus-effect {
+            border-bottom: 1px solid rgba(230, 193, 128, 0.3);
+            transition: border-color 0.3s ease;
+        }
+        .input-focus-effect:focus {
+            outline: none;
+            border-bottom-color: #c9a667;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background min-h-screen flex flex-col relative">
+<!-- Top Navigation Bar -->
+<nav class="bg-background/95 dark:bg-background/95 backdrop-blur-md fixed top-0 w-full z-50 border-b border-tertiary/30 shadow-[0_4px_20px_rgba(230,193,128,0.05)]">
+<div class="flex justify-between items-center px-container-margin h-20 max-w-7xl mx-auto w-full">
+<div class="font-headline-lg text-headline-lg text-tertiary uppercase tracking-widest hover:opacity-80 transition-opacity cursor-pointer">
+                Vantasy
+            </div>
+<div class="hidden md:flex items-center gap-8 font-headline-md text-headline-md tracking-wide">
+<a class="text-on-background/70 hover:text-tertiary transition-colors duration-300" href="#">The Van</a>
+<a class="text-tertiary border-b border-tertiary pb-1 opacity-80 scale-95 transition-all" href="#">Themes</a>
+<a class="text-on-background/70 hover:text-tertiary transition-colors duration-300" href="#">Experience</a>
+</div>
+<button class="gold-gradient-bg text-on-primary-fixed font-label-caps px-6 py-2 rounded-sm tracking-[0.15em] hover:brightness-110 transition-all subtle-glow hidden md:block">
+                Book Now
+            </button>
+<button class="md:hidden text-tertiary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-32 md:pb-section-gap px-container-margin max-w-7xl mx-auto w-full flex flex-col lg:flex-row gap-section-gap">
+<!-- Left Column: Details -->
+<div class="flex-1 space-y-section-gap">
+<!-- Hero Section -->
+<section class="relative rounded-xl overflow-hidden gold-border aspect-[16/9] lg:aspect-[21/9]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A luxurious van interior decorated for a birthday celebration. Warm gold lighting accents plush leather seating. A 'Celebration Time' banner hangs across the back window. An arrangement of gold, blue, and white balloons fills the space. A meticulously decorated birthday cake sits on an elegant table in the center. The atmosphere is intimate, exclusive, and highly festive, embodying a premium mobile lounge experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr8GRGNfvfU2CZa0ddwVzvb5-N3DKq2GSP-ArDfOfBc_SLJLutERP8wx3avhRiukPMrIaPJ89kgHKnny7-kAWROQ86RtBKcTrCQLtipDt9q-5Y1ZqrjCSLabQV6nA-lSA9mbY3btEYB-MSeC60tNLvSX2sCC7iIkx_qPggBMcqhxupFjhl_YAAVk22dQAj1HAi4h_CstzCF8sq8nUs8YHr02ZiRlO2xv_JOilIVoHYXRsiyNULaoE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-gutter md:p-8 w-full flex flex-col md:flex-row justify-between items-end gap-4">
+<div>
+<span class="font-label-caps text-tertiary tracking-[0.15em] uppercase mb-2 block">Premium Theme</span>
+<h1 class="font-display-lg text-display-lg md:text-[56px] text-inverse-surface mb-2">Celebration Suite</h1>
+<p class="font-headline-md text-headline-md text-tertiary italic">A Festive Voyage</p>
+</div>
+<button class="flex items-center gap-2 gold-border px-4 py-2 rounded-sm text-tertiary hover:bg-tertiary/10 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined" data-icon="360">360</span>
+<span class="font-label-caps tracking-[0.15em]">View in 360°</span>
+</button>
+</div>
+</section>
+<!-- What's Included Grid -->
+<section>
+<div class="flex items-center gap-4 mb-8">
+<h2 class="font-headline-lg text-headline-lg text-inverse-surface">What's Included</h2>
+<div class="h-[1px] flex-grow bg-gradient-to-r from-tertiary/30 to-transparent"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Capacity -->
+<div class="bg-surface-container-low p-6 rounded-lg gold-border flex items-start gap-4 hover:bg-surface-container-highest transition-colors">
+<div class="text-tertiary p-3 bg-background rounded-full gold-border-active flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="group" data-weight="fill" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+<div>
+<h3 class="font-label-caps text-on-surface-variant mb-1 uppercase">Capacity</h3>
+<p class="font-body-lg text-inverse-surface">4-7 Guests</p>
+</div>
+</div>
+<!-- Ambiance -->
+<div class="bg-surface-container-low p-6 rounded-lg gold-border flex items-start gap-4 hover:bg-surface-container-highest transition-colors">
+<div class="text-tertiary p-3 bg-background rounded-full gold-border-active flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="celebration" data-weight="fill" style="font-variation-settings: 'FILL' 1;">celebration</span>
+</div>
+<div>
+<h3 class="font-label-caps text-on-surface-variant mb-1 uppercase">Ambiance</h3>
+<p class="font-body-lg text-inverse-surface">Party Lights &amp; Playlists</p>
+</div>
+</div>
+<!-- Staff -->
+<div class="bg-surface-container-low p-6 rounded-lg gold-border flex items-start gap-4 hover:bg-surface-container-highest transition-colors">
+<div class="text-tertiary p-3 bg-background rounded-full gold-border-active flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="support_agent" data-weight="fill" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<div>
+<h3 class="font-label-caps text-on-surface-variant mb-1 uppercase">Staff</h3>
+<p class="font-body-lg text-inverse-surface">Chauffeur &amp; Party Host</p>
+</div>
+</div>
+<!-- Refreshments -->
+<div class="bg-surface-container-low p-6 rounded-lg gold-border flex items-start gap-4 hover:bg-surface-container-highest transition-colors">
+<div class="text-tertiary p-3 bg-background rounded-full gold-border-active flex-shrink-0">
+<span class="material-symbols-outlined" data-icon="cake" data-weight="fill" style="font-variation-settings: 'FILL' 1;">cake</span>
+</div>
+<div>
+<h3 class="font-label-caps text-on-surface-variant mb-1 uppercase">Refreshments</h3>
+<p class="font-body-lg text-inverse-surface">Birthday Cake &amp; Bubbly</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Customization Panel -->
+<section class="bg-surface-container-low p-8 rounded-xl gold-border relative">
+<!-- Decorative miniature accent -->
+<div class="absolute -top-4 -right-4 w-12 h-12 bg-background rounded-full gold-border-active flex items-center justify-center text-tertiary subtle-glow shadow-lg" title="Miniature friends accent">
+<span class="material-symbols-outlined text-2xl" data-icon="diversity_3" data-weight="fill" style="font-variation-settings: 'FILL' 1;">diversity_3</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-inverse-surface mb-8">Customize Your Celebration</h2>
+<div class="space-y-8">
+<!-- Balloon Colors -->
+<div>
+<label class="font-label-caps text-on-surface-variant uppercase mb-4 block">Balloon Palette</label>
+<div class="flex gap-4">
+<label class="cursor-pointer relative">
+<input checked="" class="peer sr-only" name="balloons" type="radio"/>
+<div class="w-12 h-12 rounded-full border-2 border-transparent peer-checked:border-tertiary p-1 transition-all">
+<div class="w-full h-full rounded-full" style="background: linear-gradient(135deg, #1b365d, #d4af37);"></div>
+</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="balloons" type="radio"/>
+<div class="w-12 h-12 rounded-full border-2 border-transparent peer-checked:border-tertiary p-1 transition-all">
+<div class="w-full h-full rounded-full" style="background: linear-gradient(135deg, #ffb6c1, #ffffff);"></div>
+</div>
+</label>
+<label class="cursor-pointer relative">
+<input class="peer sr-only" name="balloons" type="radio"/>
+<div class="w-12 h-12 rounded-full border-2 border-transparent peer-checked:border-tertiary p-1 transition-all">
+<div class="w-full h-full rounded-full" style="background: linear-gradient(135deg, #000000, #d4af37);"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Banner Text -->
+<div>
+<label class="font-label-caps text-on-surface-variant uppercase mb-2 block" for="banner-text">Banner Message</label>
+<input class="w-full bg-transparent border-0 input-focus-effect font-body-lg text-inverse-surface py-2 px-0 tracking-wide" id="banner-text" placeholder="Enter message..." type="text" value="HAPPY BIRTHDAY"/>
+<p class="text-sm text-on-surface-variant/70 mt-1">Max 20 characters.</p>
+</div>
+<!-- Cake Flavor -->
+<div>
+<label class="font-label-caps text-on-surface-variant uppercase mb-4 block">Cake Flavor</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<label class="flex items-center gap-3 p-3 gold-border rounded-lg cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input checked="" class="custom-radio" name="cake" type="radio"/>
+<span class="font-body-md text-inverse-surface">Chocolate</span>
+</label>
+<label class="flex items-center gap-3 p-3 gold-border rounded-lg cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input class="custom-radio" name="cake" type="radio"/>
+<span class="font-body-md text-inverse-surface">Vanilla</span>
+</label>
+<label class="flex items-center gap-3 p-3 gold-border rounded-lg cursor-pointer hover:bg-surface-container-highest transition-colors">
+<input class="custom-radio" name="cake" type="radio"/>
+<span class="font-body-md text-inverse-surface">Red Velvet</span>
+</label>
+</div>
+</div>
+<!-- Add-ons -->
+<div>
+<label class="font-label-caps text-on-surface-variant uppercase mb-4 block">Optional Enhancements</label>
+<label class="flex items-center justify-between p-4 bg-background gold-border rounded-lg cursor-pointer hover:bg-surface-container-highest transition-colors">
+<div class="flex items-center gap-3">
+<input class="custom-checkbox" type="checkbox"/>
+<div>
+<span class="font-body-md text-inverse-surface block">Confetti Burst Moment</span>
+<span class="text-sm text-on-surface-variant">Timed release upon entry</span>
+</div>
+</div>
+<span class="font-price-display text-tertiary">+₹299</span>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Booking Bar -->
+<aside class="w-full lg:w-[400px] flex-shrink-0">
+<div class="sticky top-32 bg-surface-container-lowest p-8 rounded-xl gold-border shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
+<h3 class="font-headline-md text-headline-md text-inverse-surface border-b border-tertiary/20 pb-4 mb-6">Booking Details</h3>
+<div class="flex justify-between items-end mb-8">
+<div>
+<span class="font-label-caps text-on-surface-variant uppercase block mb-1">Base Theme Price</span>
+<span class="font-price-display text-3xl text-tertiary font-bold">₹15,999</span>
+</div>
+</div>
+<div class="space-y-6 mb-8">
+<!-- Guest Count -->
+<div>
+<label class="font-label-caps text-on-surface-variant uppercase mb-2 block flex justify-between">
+<span>Guest Count</span>
+<span class="text-tertiary">Max 7</span>
+</label>
+<div class="flex items-center justify-between border-b border-tertiary/30 pb-2">
+<button class="text-on-surface-variant hover:text-tertiary transition-colors w-8 h-8 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<span class="font-body-lg text-inverse-surface font-semibold">4</span>
+<button class="text-on-surface-variant hover:text-tertiary transition-colors w-8 h-8 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Summary -->
+<div class="bg-background p-4 rounded-sm gold-border space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Base Price</span>
+<span class="text-inverse-surface">₹15,999</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Customizations</span>
+<span class="text-inverse-surface">--</span>
+</div>
+<div class="pt-2 border-t border-tertiary/20 flex justify-between font-semibold mt-2">
+<span class="text-tertiary font-label-caps uppercase">Total Estimate</span>
+<span class="text-tertiary">₹15,999</span>
+</div>
+</div>
+</div>
+<button class="w-full gold-gradient-bg text-on-primary-fixed font-headline-md text-[18px] py-4 rounded-sm tracking-wide hover:brightness-110 transition-all subtle-glow flex justify-center items-center gap-2">
+<span>Choose This Theme</span>
+<span class="material-symbols-outlined text-xl" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center text-xs text-on-surface-variant mt-4 font-label-caps tracking-widest">Taxes calculated at checkout</p>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full relative bottom-0 border-t border-tertiary/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-container-margin py-section-gap w-full max-w-7xl mx-auto">
+<div class="font-headline-md text-headline-md text-tertiary mb-6 md:mb-0">
+                Vantasy
+            </div>
+<div class="flex flex-wrap justify-center gap-6 font-body-md text-body-md text-on-surface-variant mb-6 md:mb-0">
+<a class="hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform" href="#">Privacy Policy</a>
+<a class="hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform" href="#">Terms of Service</a>
+<a class="hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform" href="#">Press Kit</a>
+<a class="hover:text-tertiary transition-colors hover:translate-y-[-2px] transition-transform" href="#">Contact</a>
+</div>
+<div class="font-body-md text-body-md text-tertiary">
+                © 2024 Vantasy Luxury Co. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

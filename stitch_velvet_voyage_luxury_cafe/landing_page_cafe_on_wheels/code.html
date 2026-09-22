@@ -1,0 +1,369 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Café on Wheels - Modern Luxury Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,700&amp;family=Sora:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#ffb2b7",
+                    "on-error-container": "#ffdad6",
+                    "surface-container": "#20201c",
+                    "on-error": "#690005",
+                    "on-background": "#e6e2db",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#e5e2e1",
+                    "surface-container-low": "#1c1c18",
+                    "secondary-container": "#7f2c37",
+                    "on-primary-container": "#848383",
+                    "tertiary-fixed-dim": "#e6c180",
+                    "outline": "#8e9192",
+                    "on-secondary-fixed-variant": "#7c2a35",
+                    "inverse-on-surface": "#31302c",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "inverse-primary": "#5f5e5e",
+                    "on-primary": "#313030",
+                    "on-tertiary-container": "#9e7f44",
+                    "on-surface-variant": "#c4c7c7",
+                    "surface-container-highest": "#363530",
+                    "tertiary": "#e6c180",
+                    "background": "#141310",
+                    "on-secondary": "#5f1320",
+                    "on-primary-fixed": "#1b1b1b",
+                    "on-surface": "#e6e2db",
+                    "surface": "#141310",
+                    "on-primary-fixed-variant": "#474746",
+                    "secondary": "#ffb2b7",
+                    "on-tertiary-fixed": "#271900",
+                    "primary": "#c8c6c5",
+                    "surface-dim": "#141310",
+                    "secondary-fixed": "#ffdadb",
+                    "surface-tint": "#c8c6c5",
+                    "outline-variant": "#444748",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2b2a26",
+                    "surface-bright": "#3a3935",
+                    "tertiary-container": "#261900",
+                    "surface-variant": "#363530",
+                    "tertiary-fixed": "#ffdea7",
+                    "surface-container-lowest": "#0f0e0b",
+                    "on-secondary-container": "#ff9da5",
+                    "on-tertiary-fixed-variant": "#5c420c",
+                    "primary-container": "#1b1b1b",
+                    "on-secondary-fixed": "#40000e",
+                    "inverse-surface": "#e6e2db",
+                    "on-tertiary": "#412d00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "container-margin": "24px",
+                    "section-gap": "48px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "label-caps": [
+                            "Sora"
+                    ],
+                    "body-lg": [
+                            "Sora"
+                    ],
+                    "price-display": [
+                            "Sora"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Sora"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.15em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "price-display": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+            position: relative;
+        }
+        
+        /* Subtle noise texture for Velvet Charcoal feel */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        .gold-gradient {
+            background: linear-gradient(45deg, theme('colors.tertiary'), #E6D2AA);
+        }
+        .gold-glow {
+            box-shadow: 0 0 20px 0 rgba(230, 193, 128, 0.15);
+        }
+        .gold-border-subtle {
+            border: 1px solid rgba(230, 193, 128, 0.3);
+        }
+        .gold-border-active {
+            border: 1px solid theme('colors.tertiary');
+        }
+        .input-focus-animate {
+            background-color: #121212; /* Darker input background */
+            border-bottom: 1px solid rgba(230, 193, 128, 0.3);
+            transition: border-color 0.3s ease;
+        }
+        .input-focus-animate:focus {
+            outline: none;
+            border-bottom: 1px solid theme('colors.tertiary');
+        }
+        
+        .thin-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(230, 193, 128, 0.5), transparent);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-tertiary selection:text-background flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed bg-background/95 backdrop-blur-md docked full-width top-0 z-50 border-b border-tertiary/30 w-full">
+<div class="flex justify-between items-center w-full px-container-margin h-20 max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-lg text-tertiary tracking-tight italic">
+                Café on Wheels
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">The Van</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Themes</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Experience</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Events</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="hidden md:block gold-gradient gold-glow text-on-primary-fixed font-label-caps text-label-caps px-6 py-3 rounded-DEFAULT hover:scale-95 transition-transform duration-300">
+                Book Now
+            </button>
+<button class="md:hidden text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-grow pt-20"> <!-- Offset for fixed header -->
+<!-- HERO SECTION -->
+<section class="relative w-full h-[85vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover object-center opacity-80" data-alt="A luxurious matte black Mercedes Sprinter van parked on a wet cobblestone street at dusk, warm amber light glowing from the spacious cafe interior visible through large side windows, high-end modern aesthetic, cinematic lighting, photorealistic." src="https://lh3.googleusercontent.com/aida/AP1WRLu6Z6Oh6E5H-eGfWb6rNjTBrIcDmwjYKj1SPfvoIY2qTbLeCrGeuaxY6jK6lTVPeJlKvEaYSmtnDXjoTY5_O3ocrYEYp0iaRR629WWFKbUkZJjmV-pXrVOmC0DvjhYuwzPL_i-L9S0L1Ee3oFQgmiFKVPFc8L_bZlWkQD_DzzbvcB9L8kYwGexLqTGq9TMkN9NfIIyNaKHT-mQ0vyp3toX6i5X197bSEH2NLjj0W_uCFvf6Nn4uTwAQ6A">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 text-center px-container-margin max-w-4xl mx-auto flex flex-col items-center gap-8 mt-16">
+<div class="relative inline-block">
+
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface drop-shadow-lg">
+                        Your Cafe. Your Destination. <br><span class="text-tertiary italic">One Unforgettable Ride.</span>
+</h1>
+</div>
+<p class="font-body-md text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Choose where you want to go, and enjoy a fully themed cafe experience the entire way there.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+<button class="gold-gradient gold-glow text-on-primary-fixed font-label-caps text-label-caps px-8 py-4 rounded-DEFAULT w-full sm:w-auto hover:opacity-90 transition-opacity">
+                        Plan Your Ride
+                    </button>
+<button class="bg-transparent gold-border-subtle text-on-surface font-label-caps text-label-caps px-8 py-4 rounded-DEFAULT w-full sm:w-auto hover:bg-tertiary/10 transition-colors">
+                        Explore the Van in 360°
+                    </button>
+</div>
+</div>
+</section>
+<!-- HOW IT WORKS -->
+<section class="py-24 px-container-margin max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-headline-md text-tertiary mb-4">The Journey Defined</h2>
+<div class="thin-divider w-24 mx-auto mb-4"></div>
+<p class="font-body-md text-body-md text-on-surface-variant">Four simple steps to your personalized mobile retreat.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-low rounded-xl gold-border-subtle group hover:gold-border-active transition-colors duration-300">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 32px; font-weight: 200;">map</span>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary mb-2">01</span>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Choose Destination</h3>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-low rounded-xl gold-border-subtle group hover:gold-border-active transition-colors duration-300">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 32px; font-weight: 200;">palette</span>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary mb-2">02</span>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Choose Theme</h3>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-low rounded-xl gold-border-subtle group hover:gold-border-active transition-colors duration-300">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 32px; font-weight: 200;">restaurant_menu</span>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary mb-2">03</span>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Customize Menu &amp; Ambiance</h3>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center p-6 bg-surface-container-low rounded-xl gold-border-subtle group hover:gold-border-active transition-colors duration-300">
+<div class="w-16 h-16 rounded-full bg-surface-variant flex items-center justify-center mb-6 group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary" style="font-size: 32px; font-weight: 200;">weekend</span>
+</div>
+<span class="font-label-caps text-label-caps text-tertiary mb-2">04</span>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Ride &amp; Relax</h3>
+</div>
+</div>
+</section>
+<!-- INSIDE THE VAN -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-container-margin">
+<div class="flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2">
+<h2 class="font-display-lg text-headline-md text-tertiary mb-6">Inside the Sanctuary</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                            Every inch of our mobile café is designed with uncompromising luxury. From the driver's cabin to the private washroom, experience a space crafted for total indulgence.
+                        </p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-1" style="font-weight: 200;">directions_car</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Driver Cabin</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Isolated for privacy, ensuring your journey is uninterrupted.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-1" style="font-weight: 200;">local_cafe</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Kitchen &amp; Service Bar</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">A boutique espresso bar outfitted with high-end appliances.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-1" style="font-weight: 200;">chair</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Guest Lounge</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">Plush, wrap-around seating designed for comfort and connection.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-tertiary mt-1" style="font-weight: 200;">bathtub</span>
+<div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold">Private Washroom</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mt-1">A discreet, fully-equipped facility featuring premium marble finishes.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute inset-0 bg-tertiary/5 rounded-2xl -m-4 gold-border-subtle blur-sm"></div>
+<img class="relative z-10 w-full h-auto rounded-xl shadow-2xl" data-alt="Top-down 3D architectural floor plan rendering of a luxury van interior, showing driver cabin, marble kitchen espresso bar, plush grey wrap-around guest lounge seating, and a private rear washroom with gold fixtures, sophisticated modern design." src="https://lh3.googleusercontent.com/aida/AP1WRLvpktubnRBTdy6dEMm-tPWg5Yir_k-Xdq5JOCluQFEdCsnmHIzbE4LE-VJFLsmMXpkYgwQk87FWLNagp7t30taA9gGzJtD88xztaVWI_v-Qyup2q39Ss-lkRLqAraFTFFSaOrPeHuzYksBJkbxWEQiV_BgESN8or3QJc1O0eqQfHZE_dRLk9ge5bLRbXxkNVYm8vQ681a6rvB4nQQ8l6OObKOCqwr0nrhh9XQYTDdR9i2h56E6hDnY6oA">
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest full-width py-12 border-t border-tertiary/20">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-container-margin max-w-7xl mx-auto gap-gutter">
+<div class="font-display-lg text-headline-md text-tertiary">
+                Café on Wheels
+            </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Partner with Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary transition-colors" href="#">Fleet Locations</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm text-center md:text-right mt-6 md:mt-0">
+                © 2024 Café on Wheels. Handcrafted Indulgence on the Move.
+            </div>
+</div>
+</footer>
+
+
+</body></html>
