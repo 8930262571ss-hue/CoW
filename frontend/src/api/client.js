@@ -1,8 +1,11 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
 
 export function getWsUrl(endpoint) {
-  const wsProto = BASE_URL.startsWith('https') ? 'wss:' : 'ws:';
-  const host = BASE_URL.replace(/^https?:\/\//, '').replace(/\/api\/?$/, '');
+  const isRelative = !BASE_URL.startsWith('http://') && !BASE_URL.startsWith('https://');
+  const wsProto = (isRelative ? (typeof window !== 'undefined' && window.location.protocol === 'https:') : BASE_URL.startsWith('https')) ? 'wss:' : 'ws:';
+  const host = isRelative 
+    ? (typeof window !== 'undefined' ? window.location.host : 'localhost:8000')
+    : BASE_URL.replace(/^https?:\/\//, '').replace(/\/api\/?$/, '');
   const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
   return `${wsProto}//${host}/api${cleanEndpoint}`;
 }
