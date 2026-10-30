@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { api } from '../../api/client';
+import { api, getWsUrl } from '../../api/client';
 
 export default function DriverSimulatorPage() {
   const { bookingId } = useParams();
@@ -34,7 +34,7 @@ export default function DriverSimulatorPage() {
   useEffect(() => {
     if (!bookingId) return;
 
-    const wsUrl = `ws://localhost:8000/api/rides/ws/${bookingId}?client_type=driver`;
+    const wsUrl = getWsUrl(`/rides/ws/${bookingId}?client_type=driver`);
     const socket = new WebSocket(wsUrl);
     socketRef.current = socket;
 

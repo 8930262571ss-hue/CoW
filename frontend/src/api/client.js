@@ -1,5 +1,12 @@
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
 
+export function getWsUrl(endpoint) {
+  const wsProto = BASE_URL.startsWith('https') ? 'wss:' : 'ws:';
+  const host = BASE_URL.replace(/^https?:\/\//, '').replace(/\/api\/?$/, '');
+  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  return `${wsProto}//${host}/api${cleanEndpoint}`;
+}
+
 async function request(endpoint, options = {}) {
   const token = localStorage.getItem('cow_access_token');
   const headers = {

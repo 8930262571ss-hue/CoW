@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { api } from '../../api/client';
+import { api, getWsUrl } from '../../api/client';
 import LiveMap from '../../components/tracking/LiveMap';
 
 export default function LiveTrackingPage() {
@@ -35,7 +35,7 @@ export default function LiveTrackingPage() {
   useEffect(() => {
     if (!bookingId) return;
 
-    const wsUrl = `ws://localhost:8000/api/rides/ws/${bookingId}?client_type=customer`;
+    const wsUrl = getWsUrl(`/rides/ws/${bookingId}?client_type=customer`);
     const socket = new WebSocket(wsUrl);
     socketRef.current = socket;
 
