@@ -1,4 +1,11 @@
 import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load .env file from backend root if present (system env vars take precedence)
+env_file = Path(__file__).resolve().parent.parent.parent / ".env"
+if env_file.exists():
+    load_dotenv(dotenv_path=env_file, override=False)
 
 class Settings:
     PROJECT_NAME: str = "Cafe on Wheels"
